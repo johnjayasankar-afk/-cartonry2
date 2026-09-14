@@ -1,0 +1,12 @@
+{
+  "name": "cartonry",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Parametric packaging dieline generator - runs entirely in the browser, zero runtime dependencies.",
+  "scripts": {
+    "test": "node test/run.js",
+    "build:pages": "node tools/build-pages.js",
+    "dev": "python3 devserver.py 8932"
+  }
+}

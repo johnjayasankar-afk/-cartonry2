@@ -1,0 +1,150 @@
+/**
+ * Per-style reference content. This is the substance behind each box-style page:
+ * what the style is, when it is the right choice, how it is put together, and
+ * what people get wrong. Written to be worth reading on its own.
+ */
+export const GUIDES = {
+  'rsc-0201': {
+    assembly: [
+      "Score every dashed line, then fold the manufacturer's joint inward.",
+      "Wrap the four body panels into a tube and glue or stitch the joint to the far panel.",
+      "Square the tube. Fold the two shorter end flaps in first - they sit underneath.",
+      "Fold the two longer side flaps down over them; they meet along the centre line. Tape or glue.",
+    ],
+    title: 'RSC dieline generator — regular slotted container (0201)',
+    lede: 'The regular slotted container is the box almost everything ships in. One blank, four panels, four flaps top and bottom, all cut in a single pass.',
+    when: 'Use an RSC for anything that ships. It is the cheapest corrugated style to make because the blank is a plain rectangle with slots — no waste falls out of the middle, and every converter in the world already runs it.',
+    construction: 'The four body panels wrap into a tube and are joined at a glue flap. All eight flaps are the same depth, exactly half the box width, so the two outer flaps meet along the centre line of the base and the inner flaps sit underneath them. Slots one caliper wide separate the flaps so they clear each other when folded.',
+    watch: 'The flaps meeting is the whole point, and it is what people get wrong: if you dimension from the outside of the box rather than the inside, the flaps overlap and the base bulges. If the box will be heavy, look at the full overlap version instead — the extra board buys a much stiffer base.',
+  },
+  hsc: {
+    assembly: [
+      "Score every dashed line and fold the manufacturer's joint inward.",
+      "Wrap the four panels into a tube and glue the joint to the far panel.",
+      "Square the tube, fold the end flaps in, then the side flaps over them.",
+      "Leave the top open - a telescope lid or an outer shipper closes it.",
+    ],
+    title: 'Half slotted container dieline — open-top box',
+    lede: 'An RSC with the top flaps left off: an open tray for a lid to telescope over, or for a box that is loaded from above and closed another way.',
+    when: 'Pick this when a separate lid is doing the closing — two-piece gift and rigid-style packs, produce boxes, or trays that stack inside a shipper.',
+    construction: 'Identical to the RSC below the top score. The four body panels wrap into a tube with a glue flap; the bottom flaps meet at the centre. Above the body score there is simply nothing, so the blank is much shorter and uses noticeably less board.',
+    watch: 'A lid has to clear the outside of this box, not the inside. That means the lid needs your internal size plus two board thicknesses plus a working clearance — which is exactly what the telescope lid style works out for you.',
+  },
+  'fol-0203': {
+    assembly: [
+      "Score every dashed line and fold the joint inward.",
+      "Form the tube and glue the joint to the far panel.",
+      "Fold the end flaps in, then bring both side flaps fully across so they overlap.",
+      "Tape or glue the overlap; that double layer is where the strength comes from.",
+    ],
+    title: 'Full overlap slotted container dieline (FOL, 0203)',
+    lede: 'A slotted case whose flaps run the full width of the panel, so they overlap completely and give a base four layers thick.',
+    when: 'Heavy or dense contents, boxes that will be stacked, or anything where the base has to resist bursting. The overlapping flaps also close the corners properly, which helps keep dust and light out.',
+    construction: 'The body is an ordinary slotted case. The difference is flap depth: instead of half the box width, each flap is the full width, so opposite flaps lie one on top of the other rather than meeting edge to edge.',
+    watch: 'It uses considerably more board than an RSC of the same size — the blank is taller by a full box width. Check the yield figure before you commit: on some sheet sizes the extra height costs you a whole row.',
+  },
+  'mailer-tucktop': {
+    assembly: [
+      "Score every dashed line. No glue is needed anywhere.",
+      "Fold the two side walls up from the base.",
+      "Fold the front wall up and swing its corner tabs in behind the side walls.",
+      "Do the same at the back, then fold the lid over on its hinge.",
+      "Drop the lid's dust flaps inside the side walls and tuck the front flap into the front wall.",
+    ],
+    title: 'Mailer box dieline generator — tuck-top e-commerce mailer',
+    lede: 'The box that made subscription boxes look good: a hinged lid at the back, a tuck flap at the front, and walls that fold up without a drop of glue.',
+    when: 'Direct-to-consumer shipping, subscription boxes, anything where the customer opening the box is part of the product. It ships flat and folds by hand in seconds, so it suits packing by people rather than machines.',
+    construction: 'The base carries four walls. The side walls fold up first; the front and back walls follow, and their corner tabs swing in behind the sides to lock the corners. The lid hinges off the back wall, its own dust flaps drop inside the side walls, and a tuck flap at the front holds it shut.',
+    watch: 'Depth is the constraint. Once the depth passes half the width, the lid dust flaps are longer than the box is wide and foul the side walls — the generator will tell you before you cut a die. Keep it shallower than that and it folds cleanly.',
+  },
+  'tray-4corner': {
+    assembly: [
+      "Score every dashed line.",
+      "Fold the two side walls up from the base.",
+      "Fold the front and back walls up, swinging their corner tabs in behind the side walls.",
+      "Glue or tuck the tabs against the side walls to lock the corners.",
+    ],
+    title: 'Four-corner tray dieline — open tray with corner tabs',
+    lede: 'A base with four walls folded up and tabs locking the corners. The simplest way to turn a flat sheet into something that holds things.',
+    when: 'Inserts and inners, produce and bakery trays, the base of a two-piece box, or a shelf-ready display. Also the right starting point when you want a tray plus a separate lid.',
+    construction: 'The blank is a cross. The base is in the middle, the four walls fold up from it, and a tab on each end of the front and back walls swings round to sit behind the side walls, where it is glued or tucked.',
+    watch: 'Wall height cannot exceed half the shorter base dimension, or opposite corner tabs collide across the blank. Note also that a wall folded at one end and cut at the other only needs half a caliper of allowance, not a whole one — a detail that quietly makes hand-drawn trays a millimetre or two too deep.',
+  },
+  'telescope-lid': {
+    assembly: [
+      "Score every dashed line.",
+      "Fold the two side walls down from the top panel.",
+      "Fold the remaining two walls down, swinging their corner tabs in behind the sides.",
+      "Glue the tabs, then check the fit over the base before making the rest.",
+    ],
+    title: 'Telescope lid dieline — a lid that fits over your box',
+    lede: 'A shallow tray sized to slide over a box you already have. You give it the box; it works out the lid.',
+    when: 'Two-piece gift and rigid-style boxes, hamper lids, and any pack where a separate lid is more elegant than a hinged one. Pair it with the half slotted container or the four-corner tray.',
+    construction: 'Geometrically it is a four-corner tray. What matters is the sizing: the lid must clear the outside of the base, so its internal dimensions are your box plus two board thicknesses plus a slip clearance on each side.',
+    watch: 'Clearance is a judgement call and it is the difference between a lid that glides and one that jams or falls off. The generator uses 0.8 mm a side by default; set it yourself in the advanced panel. Thicker or springier board wants more, and a lid that has to go on and off repeatedly wants more still.',
+  },
+  'carton-ste': {
+    assembly: [
+      "Score every dashed line and fold the glue flap.",
+      "Form the tube and glue the flap to the far panel - this is how it arrives from the converter, flat.",
+      "Square the carton. At the bottom, fold the two dust flaps in, bring the tuck panel over them, and slip its tuck flap inside the front panel.",
+      "Fill, then close the top the same way.",
+    ],
+    title: 'Straight tuck end carton dieline (STE)',
+    lede: 'The retail folding carton, with both tuck flaps hinged from the back panel so the front face is clean and unbroken.',
+    when: 'Anything that sits on a shelf face-out — cosmetics, supplements, confectionery, small electronics. Choose straight tuck over reverse tuck when the front of the pack has to look perfect.',
+    construction: 'Four panels wrap into a tube with a glue flap. At each end the back panel carries a tuck panel that spans the opening and then a narrower tuck flap that slips inside the front panel. The side panels carry dust flaps that fold in first and close the corners.',
+    watch: 'Both tucks hinging from the same panel means the blank nests less efficiently on the sheet than the reverse tuck version, so it costs a little more board. That is the price of the clean front, and usually worth paying for a retail pack.',
+  },
+  'carton-rte': {
+    assembly: [
+      "Score every dashed line and fold the glue flap.",
+      "Form the tube and glue the flap to the far panel.",
+      "Close the bottom: dust flaps in, tuck panel over, tuck flap inside the back panel.",
+      "Fill, then close the top the same way - note the top tucks from the opposite side.",
+    ],
+    title: 'Reverse tuck end carton dieline (RTE)',
+    lede: 'The same folding carton, but with the top tuck hinged from the back and the bottom from the front. Slightly less pretty, noticeably cheaper.',
+    when: 'High-volume retail cartons where board cost matters more than a perfectly unbroken front face — and most of the time nobody notices the difference on shelf.',
+    construction: 'Identical to the straight tuck end except that the bottom closure hinges from the front panel instead of the back. Because the tuck panels sit diagonally opposite each other, blanks interlock more tightly when they are laid out on the press sheet.',
+    watch: 'One tuck seam lands on the front face. If the artwork runs across that seam, or the pack is photographed front-on, use the straight tuck instead.',
+  },
+  sleeve: {
+    assembly: [
+      "Score the four creases.",
+      "Wrap into a tube and glue the flap to the far panel.",
+      "Slide it over the product or tray. Nothing else closes.",
+    ],
+    title: 'Box sleeve and belly band dieline generator',
+    lede: 'A band that slides over something else. Open at both ends, four panels and a glue flap, and about as simple as printed packaging gets.',
+    when: 'Wrapping a tray, banding a set of products together, adding branding to a plain box, or carrying legal copy that would spoil the pack underneath. Cheap to print, cheap to change, and it lets you update artwork without re-tooling the box.',
+    construction: 'Four panels wrap into a rectangular tube and glue at a single flap. There are no closures at all — the product inside holds the shape.',
+    watch: 'The dimensions here are the cross-section the sleeve must slide over, so measure the thing it is going around, not the space inside it. If it is going over a box, use that box\'s outside size. A sleeve that is snug on paper is tight in reality; give it a little room.',
+  },
+  hexagon: {
+    assembly: [
+      "Score all six creases and the flap fold.",
+      "Wrap into a hexagonal tube and glue the flap to the sixth panel.",
+      "Fold the bottom flaps in one after another, each overlapping the last.",
+      "Glue or tape the final flap under the first to close the base.",
+    ],
+    title: 'Hexagonal box dieline generator — six-sided box',
+    lede: 'A six-panel box that reads as considered rather than shipped. Candles, cosmetics, gifts and anything that wants to look like it was chosen.',
+    when: 'When the shape is doing marketing work. A hexagon stands up well, groups neatly on a shelf, and photographs far better than a cube.',
+    construction: 'Six equal panels wrap into a hexagonal tube and glue at a flap. Bottom flaps fold in one after another and overlap; glue or tape them in sequence. Length is measured across the flats, which is how you would measure the finished box with a ruler.',
+    watch: 'A hexagon turns only 60 degrees at each corner, not 90, so it needs a smaller board allowance than a square box — 0.577 of a caliper across each panel rather than a full one. Add a whole caliper the way you would for a square box and the finished hexagon comes out oversized and slack.',
+  },
+  pillow: {
+    assembly: [
+      "Score the two creases.",
+      "Form the flat tube and glue the seam.",
+      "Press each curved end inward; the arcs roll against each other and close the pack.",
+      "No flaps, no tucks - if the ends gape, reduce the curve depth.",
+    ],
+    title: 'Pillow box dieline generator — curved-end pillow pack',
+    lede: 'A flat tube with curved ends that close themselves when the pack is flattened. No flaps, no tucks, no glue beyond the single seam.',
+    when: 'Small gifts, jewellery, soap, favours, sample sachets. It is quick to make up, needs no assembly instructions, and holds slim contents nicely.',
+    construction: 'Two panels form a tube with one glue seam. Each end is cut as a concave arc; when the tube is pressed flat the arcs roll in against each other and close the pack. There are no separate end panels at all.',
+    watch: 'Curve depth is the setting that matters and it is set with the Width field. Too shallow and the ends gape; too deep and the pack will not lie flat or the arcs collide. A quarter of the panel width is a sound default. This is also the one style with no 3D preview: a pillow box closes by bending, not by folding flat panels, and an approximation would look convincing and be wrong.',
+  },
+};

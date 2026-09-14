@@ -1,0 +1,14 @@
+# Cloudflare Pages / Netlify header rules.
+#
+# This site has no build step and therefore no content-hashed filenames, so
+# assets are served must-revalidate rather than cached hard. Everything is a few
+# tens of kilobytes and 304s are cheap, and it means a redeploy is picked up
+# immediately instead of leaving visitors on stale code - which matters because
+# the owner should never have to think about cache busting.
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=()
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://api.lemonsqueezy.com https://api.polar.sh; form-action 'none'; base-uri 'none'; frame-ancestors 'self'; object-src 'none'

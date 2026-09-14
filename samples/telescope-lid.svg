@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="344.94mm" height="289.1mm"
+     viewBox="0 0 344.94 289.1" data-generator="Cartonry">
+  <title>Telescope lid - 200 x 150 x 45 mm internal</title>
+  <g transform="translate(10 279.1) scale(1 -1)">
+  <g id="Cut" data-layer="cut" stroke="#E6007E" stroke-width="0.25" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M71.49 19.9 L27.24 19.9 L27.24 64.15 L71.49 64.15 L71.49 65.65 L25.74 65.65 L25.74 221.75 L71.49 221.75 L71.49 223.25 L27.24 223.25 L27.24 267.5 L71.49 267.5 L277.59 267.5 L321.84 267.5 L321.84 223.25 L277.59 223.25 L277.59 221.75 L323.34 221.75 L323.34 65.65 L277.59 65.65 L277.59 64.15 L321.84 64.15 L321.84 19.9 L277.59 19.9 Z"/>
+  </g>
+  <g id="Crease---fold" data-layer="crease" stroke="#0090D4" stroke-width="0.25" stroke-dasharray="3 2" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M71.49 65.65 L277.59 65.65"/>
+    <path d="M71.49 221.75 L277.59 221.75"/>
+    <path d="M71.49 65.65 L71.49 221.75"/>
+    <path d="M277.59 65.65 L277.59 221.75"/>
+    <path d="M71.49 19.9 L71.49 64.15"/>
+    <path d="M277.59 19.9 L277.59 64.15"/>
+    <path d="M71.49 223.25 L71.49 267.5"/>
+    <path d="M277.59 223.25 L277.59 267.5"/>
+  </g>
+  <g id="Dimensions" data-layer="dim" stroke="#8A94A0" stroke-width="0.25" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M25.74 17.9 L25.74 0"/>
+    <path d="M323.34 17.9 L323.34 0"/>
+    <path d="M25.74 1.6 L323.34 1.6"/>
+    <path d="M24.14 0 L27.34 3.2"/>
+    <path d="M321.74 0 L324.94 3.2"/>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="9.3" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(174.54 5.785) scale(1 -1) rotate(0)">297.6 mm</text>
+    <path d="M23.74 19.9 L5.84 19.9"/>
+    <path d="M23.74 267.5 L5.84 267.5"/>
+    <path d="M7.44 19.9 L7.44 267.5"/>
+    <path d="M5.84 18.3 L9.04 21.5"/>
+    <path d="M5.84 265.9 L9.04 269.1"/>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="9.3" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(3.255 143.7) scale(1 -1) rotate(-90)">247.6 mm</text>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="7.905" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(174.54 140.445) scale(1 -1) rotate(0)">Top</text>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="7.905" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(48.615 140.445) scale(1 -1) rotate(0)">Side</text>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="7.905" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(300.465 140.445) scale(1 -1) rotate(0)">Side</text>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="7.905" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(174.54 39.52) scale(1 -1) rotate(0)">Edge</text>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="7.905" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(174.54 241.37) scale(1 -1) rotate(0)">Edge</text>
+  </g>
+  </g>
+</svg>

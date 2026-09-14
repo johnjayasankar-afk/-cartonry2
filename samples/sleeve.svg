@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="767.8mm" height="146.2mm"
+     viewBox="0 0 767.8 146.2" data-generator="Cartonry">
+  <title>Sleeve / belly band - 200 x 150 x 100 mm internal</title>
+  <g transform="translate(10 136.2) scale(1 -1)">
+  <g id="Cut" data-layer="cut" stroke="#E6007E" stroke-width="0.25" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M44.2 24.6 L34.2 28.6 L34.2 120.6 L44.2 124.6 L746.2 124.6 L746.2 24.6 Z"/>
+  </g>
+  <g id="Crease---fold" data-layer="crease" stroke="#0090D4" stroke-width="0.25" stroke-dasharray="3 2" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M44.2 24.6 L44.2 124.6"/>
+    <path d="M244.7 24.6 L244.7 124.6"/>
+    <path d="M395.2 24.6 L395.2 124.6"/>
+    <path d="M595.7 24.6 L595.7 124.6"/>
+  </g>
+  <g id="Glue-area" data-layer="glue" stroke="#00A45A" stroke-width="0.25" stroke-dasharray="2 1.5" fill="rgba(0,164,90,.08)" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M34.2 28.6 L44.2 24.6 L44.2 124.6 L34.2 120.6 Z"/>
+  </g>
+  <g id="Dimensions" data-layer="dim" stroke="#8A94A0" stroke-width="0.25" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M34.2 22.6 L34.2 0"/>
+    <path d="M746.2 22.6 L746.2 0"/>
+    <path d="M34.2 1.6 L746.2 1.6"/>
+    <path d="M32.6 0 L35.8 3.2"/>
+    <path d="M744.6 0 L747.8 3.2"/>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(390.2 7.9) scale(1 -1) rotate(0)">712 mm</text>
+    <path d="M32.2 24.6 L9.6 24.6"/>
+    <path d="M32.2 124.6 L9.6 124.6"/>
+    <path d="M11.2 24.6 L11.2 124.6"/>
+    <path d="M9.6 23 L12.8 26.2"/>
+    <path d="M9.6 123 L12.8 126.2"/>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(4.9 74.6) scale(1 -1) rotate(-90)">100 mm</text>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="11.9" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(144.45 69.7) scale(1 -1) rotate(0)">Side</text>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="11.9" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(319.95 69.7) scale(1 -1) rotate(0)">End</text>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="11.9" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(495.45 69.7) scale(1 -1) rotate(0)">Side</text>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="11.9" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(670.95 69.7) scale(1 -1) rotate(0)">End</text>
+  </g>
+  </g>
+</svg>

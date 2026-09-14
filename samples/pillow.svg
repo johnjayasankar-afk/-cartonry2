@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="232.238mm" height="158.166mm"
+     viewBox="0 0 232.238 158.166" data-generator="Cartonry">
+  <title>Pillow box - 90 x 22 x 120 mm internal</title>
+  <g transform="translate(10 148.166) scale(1 -1)">
+  <g id="Cut" data-layer="cut" stroke="#E6007E" stroke-width="0.25" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M29.638 16.566 L19.738 20.526 L19.738 132.606 L29.638 136.566 L29.638 136.566 L32.712 132.967 L36.071 129.633 L39.692 126.587 L43.552 123.848 L47.624 121.436 L51.88 119.367 L56.292 117.654 L60.83 116.31 L65.463 115.343 L70.159 114.761 L74.888 114.566 L79.617 114.761 L84.313 115.343 L88.946 116.31 L93.484 117.654 L97.896 119.367 L102.152 121.436 L106.224 123.848 L110.084 126.587 L113.705 129.633 L117.064 132.967 L120.138 136.566 L120.138 136.566 L123.212 132.967 L126.571 129.633 L130.192 126.587 L134.052 123.848 L138.124 121.436 L142.38 119.367 L146.792 117.654 L151.33 116.31 L155.963 115.343 L160.659 114.761 L165.388 114.566 L170.117 114.761 L174.813 115.343 L179.446 116.31 L183.984 117.654 L188.396 119.367 L192.652 121.436 L196.724 123.848 L200.584 126.587 L204.205 129.633 L207.564 132.967 L210.638 136.566 L210.638 16.566 L210.638 16.566 L207.564 20.165 L204.205 23.499 L200.584 26.545 L196.724 29.284 L192.652 31.696 L188.396 33.765 L183.984 35.478 L179.446 36.822 L174.813 37.789 L170.117 38.371 L165.388 38.566 L160.659 38.371 L155.963 37.789 L151.33 36.822 L146.792 35.478 L142.38 33.765 L138.124 31.696 L134.052 29.284 L130.192 26.545 L126.571 23.499 L123.212 20.165 L120.138 16.566 L120.138 16.566 L117.064 20.165 L113.705 23.499 L110.084 26.545 L106.224 29.284 L102.152 31.696 L97.896 33.765 L93.484 35.478 L88.946 36.822 L84.313 37.789 L79.617 38.371 L74.888 38.566 L70.159 38.371 L65.463 37.789 L60.83 36.822 L56.292 35.478 L51.88 33.765 L47.624 31.696 L43.552 29.284 L39.692 26.545 L36.071 23.499 L32.712 20.165 L29.638 16.566 Z"/>
+  </g>
+  <g id="Crease---fold" data-layer="crease" stroke="#0090D4" stroke-width="0.25" stroke-dasharray="3 2" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M29.638 16.566 L29.638 136.566"/>
+    <path d="M120.138 16.566 L120.138 136.566"/>
+  </g>
+  <g id="Glue-area" data-layer="glue" stroke="#00A45A" stroke-width="0.25" stroke-dasharray="2 1.5" fill="rgba(0,164,90,.08)" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M19.738 20.526 L29.638 16.566 L29.638 136.566 L19.738 132.606 Z"/>
+  </g>
+  <g id="Dimensions" data-layer="dim" stroke="#8A94A0" stroke-width="0.25" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M19.738 14.566 L19.738 0"/>
+    <path d="M210.638 14.566 L210.638 0"/>
+    <path d="M19.738 1.6 L210.638 1.6"/>
+    <path d="M18.138 0 L21.338 3.2"/>
+    <path d="M209.038 0 L212.238 3.2"/>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="5.965625" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(115.188 4.285) scale(1 -1) rotate(0)">190.9 mm</text>
+    <path d="M17.738 16.566 L3.172 16.566"/>
+    <path d="M17.738 136.566 L3.172 136.566"/>
+    <path d="M4.772 16.566 L4.772 136.566"/>
+    <path d="M3.172 14.966 L6.372 18.166"/>
+    <path d="M3.172 134.966 L6.372 138.166"/>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="5.965625" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(2.088 76.566) scale(1 -1) rotate(-90)">120 mm</text>
+  </g>
+  </g>
+</svg>

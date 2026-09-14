@@ -1,0 +1,14 @@
+{
+  "name": "Cartonry — packaging dieline generator",
+  "short_name": "Cartonry",
+  "description": "Production-ready packaging dielines at any size. Runs entirely in your browser.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f8f6f1",
+  "theme_color": "#f8f6f1",
+  "categories": ["productivity", "design", "utilities"],
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

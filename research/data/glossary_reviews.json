@@ -1,0 +1,910 @@
+{
+ "Glossary for Confluence (Terms Definition) [3.5*]": [
+  {
+   "stars": 5,
+   "review": "Glossary for Confluence is a useful and easy-to-use app for organizing important terms directly in Confluence. Creating terms and adding details like synonyms, abbreviations, and labels was straightforward. Overall, it can make documentation easier to understand, especially for onboarding and internal processes.",
+   "date": "2026-09-04",
+   "migrated": true
+  },
+  {
+   "stars": 5,
+   "review": "The app was easy to use once the glossary was set up, and adding terms, definitions, synonyms and labels felt straightforward. The page highlighting and glossary macros were especially useful because definitions could be shown directly inside Confluence pages. I did face some confusion during the initial setup and glossary navigation, but overall the app worked well for organizing and reusing shared terminology.",
+   "date": "2026-09-04",
+   "migrated": true
+  },
+  {
+   "stars": 5,
+   "review": "Glossary for Confluence provides a useful set of features for managing shared terminology directly within Confluence. Creating and organizing terms was straightforward, and features such as synonyms, abbreviations, labels, attachments, term highlighting, CSV import, and multilingual translations were useful and generally easy to understand. The Term List macro and Glossary Highlight feature worked well and made glossary content accessible from Confluence pages. The multilingual workflow was also effective once enabled. However, I encountered several usability issues during testing. Floating support and feedback widgets sometimes covered important controls such as Save and Apply Filter. Some dropdowns and scrollbars were partially clipped, CSV import did not clearly report invalid rows, and the Term Definition macro eventually displayed a license-expired error after a long loading time. Overall, the app has good potential and provides real value for teams maintaining shared terminology, but the UI overlays, validation feedback, performance, and macro reliability need further refinement for a smoother production experience.",
+   "date": "2026-08-28",
+   "migrated": true
+  },
+  {
+   "stars": 5,
+   "review": "Highly Recommended, I am using it regurlary for my use",
+   "date": "2026-08-27",
+   "migrated": true
+  },
+  {
+   "stars": 5,
+   "review": "The Glossary app is a helpful addition to Confluence and makes unfamiliar terms easier to understand without leaving the page. Most features worked well and felt straightforward to use. There are a few issues to improve, and some small usability problems. Overall, it\u2019s a useful app with a strong foundation that could become even better with a little more polish.",
+   "date": "2026-08-25",
+   "migrated": true
+  },
+  {
+   "stars": 4,
+   "review": "Glossary for Confluence provides a useful set of features for managing shared terminology directly within Confluence. Creating and organizing terms was straightforward, and features such as synonyms, abbreviations, labels, attachments, term highlighting, CSV import, and multilingual translations were useful and generally easy to understand. The Term List macro and Glossary Highlight feature worked well and made glossary content accessible from Confluence pages. The multilingual workflow was also effective once enabled. However, I encountered several usability issues during testing. Floating support and feedback widgets sometimes covered important controls such as Save and Apply Filter. Some dropdowns and scrollbars were partially clipped, CSV import did not clearly report invalid rows, and the Term Definition macro eventually displayed a license-expired error after a long loading time. Overall, the app has good potential and provides real value for teams maintaining shared terminology, but the UI overlays, validation feedback, performance, and macro reliability need further refinement for a smoother production experience.",
+   "date": "2026-08-19",
+   "migrated": true
+  },
+  {
+   "stars": 5,
+   "review": "Overall, the Glossary application provides a smooth, user-friendly, and reliable experience. I tested the main functionalities, including creating and managing glossary terms, adding definitions, searching and filtering terms, multilingual glossary settings, displaying terms through the List Macro, and adding a term directly from a Confluence page. The functionalities tested worked as expected, with terms and definitions being saved and displayed correctly. The Add Term from Confluence Page functionality was particularly useful, as it allows users to select a term directly from a Confluence page and add it to the Glossary without having to manually recreate the term. The List Macro also worked well, displaying the available glossary terms in an organized and easy-to-navigate format. Overall, the application is intuitive, functional, and well-integrated with Confluence, and the tested features provide a good user experience.",
+   "date": "2026-08-17",
+   "migrated": true
+  },
+  {
+   "stars": 5,
+   "review": "A very useful addition to Confluence for managing shared terminology. The glossary makes it easy to define important terms and reuse them directly within documentation. The highlighting and macro features are especially helpful for onboarding and keeping documentation consistent. Overall, a practical solution with a clean and intuitive experience",
+   "date": "2026-08-17",
+   "migrated": true
+  },
+  {
+   "stars": 5,
+   "review": "Great experience with the Glossary for Confluence app. The integration with Confluence feels natural, especially the term highlighting and glossary macros. It makes shared terminology easier to find, understand, and reuse within documentation. Overall, a useful and well-integrated solution for teams managing internal knowledge.",
+   "date": "2026-08-17",
+   "migrated": true
+  },
+  {
+   "stars": 5,
+   "review": "Glossary for Confluence has been really helpful for our team's docs. Easy to create and highlight key terms right on the page, and reusing definitions via macros saves a ton of time, especially handy for onboarding new folks. Search and multilingual support work great for distributed teams. Overall a solid app that's made our documentation way more consistent.",
+   "date": "2026-08-14",
+   "migrated": true
+  },
+  {
+   "stars": 5,
+   "review": "A helpful app for creating, organizing, translating, and reusing shared terms in Confluence. It improves documentation clarity and is especially useful for onboarding and multilingual teams.",
+   "date": "2026-07-27",
+   "migrated": true
+  },
+  {
+   "stars": 5,
+   "review": "Glossary for Confluence is a useful app for teams that want to keep documentation consistent and make important terminology easier to understand. The interface is clean, and creating, organizing, and reusing glossary terms is straightforward. I particularly liked the search functionality, multilingual support, import/export capabilities, and the ability to reuse glossary content through macros. These features make it easier to maintain a centralized knowledge base and improve onboarding documentation. There are a few areas where the user experience could be improved, such as making advanced term fields easier to discover, improving CSV exports, and refining some UI interactions. Overall, the app is well integrated with Confluence and is a great solution for teams looking to standardize terminology and improve documentation quality.",
+   "date": "2026-07-25",
+   "migrated": true
+  },
+  {
+   "stars": 4,
+   "review": "",
+   "date": "2026-07-20",
+   "migrated": true
+  },
+  {
+   "stars": 5,
+   "review": "Excellent Product.",
+   "date": "2026-07-20",
+   "migrated": true
+  },
+  {
+   "stars": 5,
+   "review": "I found Glossary for Confluence very useful for organizing and managing shared terminology across our documentation. Creating glossary terms, highlighting them within Confluence pages, and reusing definitions through macros made our onboarding content much easier to understand. The interface is intuitive, and the integration feels seamless. Highly recommended for teams looking to improve knowledge sharing and documentation consistency!",
+   "date": "2026-07-16",
+   "migrated": true
+  },
+  {
+   "stars": 5,
+   "review": "Great app for keeping Confluence documentation clear and consistent. Creating and managing glossary terms is simple, and the glossary highlights and macros make definitions easily accessible within pages. The setup is straightforward, and the app feels well integrated with Confluence. Overall, a useful solution for teams managing shared terminology.",
+   "date": "2026-07-15",
+   "migrated": true
+  },
+  {
+   "stars": 5,
+   "review": "Useful for complex technical documents",
+   "date": "2026-07-15",
+   "migrated": true
+  },
+  {
+   "stars": 5,
+   "review": "Very useful tool for daily usage. sometimes feels a bit slow but overall very good and easy to use",
+   "date": "2026-07-14",
+   "migrated": true
+  },
+  {
+   "stars": 5,
+   "review": "Pretty Useful",
+   "date": "2026-07-13",
+   "migrated": true
+  },
+  {
+   "stars": 4,
+   "review": "very helpful support which was able to fix our issues, or help our end customer to understand how app is working and what are possibilities for solving reported issues. Vendor was able to prepare patch, based on our needs and is able to check or consult results via call.",
+   "date": "2025-05-14",
+   "migrated": false
+  },
+  {
+   "stars": 1,
+   "review": "Incredibly slow and not useful. Do not recommend.",
+   "date": "2024-04-11",
+   "migrated": false
+  },
+  {
+   "stars": 2,
+   "review": "For 4 days now, nothing appears when i click on the application. Please Help !!!",
+   "date": "2024-03-08",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Hi, The support team helped me quickly and efficiently. :)",
+   "date": "2024-02-19",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Support is always helpful and forthcoming. Issues get addressed right away. Glossary makes a perfect addition for our Confluence instance.",
+   "date": "2024-01-19",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "I did only a very brief trial of this plugin and cannot say much about it's long-term usage. However, I very much appreciated the quick turn around and responsiveness of the support team and the CPO in person. Much appreciated! Kind regards, Thomas.",
+   "date": "2024-01-06",
+   "migrated": false
+  },
+  {
+   "stars": 2,
+   "review": "Hello, it was a stony way to fix the incompatibility with the draw.io-app; it takes a couple of month, but got it. So at the end I \u00c3\u0083\u00c2\u0082\u00c3\u0082\u00c2\u00b4m glad to report our customers, we have fixed the problem now. But in summary, glossary seems to have big impact in interpreting/rendering html-sides in a browser. Adding the glossary-term-links injected in the content could use a bit of time and interdependency with other apps on confluence for instance draw.io.",
+   "date": "2023-03-08",
+   "migrated": false
+  },
+  {
+   "stars": 2,
+   "review": "Too buggy. Latest bug: It duplicates User-macros via the debugging function of Chrome, when used in sections. First class side effect.",
+   "date": "2023-02-16",
+   "migrated": false
+  },
+  {
+   "stars": 1,
+   "review": "Incredibly slow, not highlighting words. Could be a great addition, if only it worked.",
+   "date": "2022-10-19",
+   "migrated": false
+  },
+  {
+   "stars": 1,
+   "review": "",
+   "date": "2022-08-03",
+   "migrated": false
+  },
+  {
+   "stars": 1,
+   "review": "",
+   "date": "2022-05-10",
+   "migrated": false
+  },
+  {
+   "stars": 1,
+   "review": "Does not work. It does not even start.",
+   "date": "2022-04-28",
+   "migrated": false
+  },
+  {
+   "stars": 1,
+   "review": "Worst support team ever,... the complement is full of bugs and still having few tickets raised since 3 months ago! One of my tickets has been closed with no real fix, in another one they doest no reply to my last messages... a real mess. Avoid this complement as much as you can.",
+   "date": "2022-03-29",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Very responsive support",
+   "date": "2022-03-14",
+   "migrated": false
+  },
+  {
+   "stars": 1,
+   "review": "Slow like hell - but by the fact that most of the time its not loading or crashing the speed isnt the problem ...",
+   "date": "2022-01-27",
+   "migrated": false
+  },
+  {
+   "stars": 2,
+   "review": "",
+   "date": "2021-10-16",
+   "migrated": false
+  },
+  {
+   "stars": 1,
+   "review": "Crashes instantly",
+   "date": "2021-06-04",
+   "migrated": false
+  },
+  {
+   "stars": 2,
+   "review": "im very sorry but update to 5.0 is a complete mess for existing data. I dont understand why something like this gets released and stays online for so many month without any bugfix.. And besides the migration that crashes your data you have a lot of utf-8 / encoding errors in the Administration of the Plugin and a lot menu points that are not translated and in dutch language or something like this. 2 Stars cause the functionality is good.",
+   "date": "2021-05-03",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Awesome App! I like the new features added to the last version 5.0.0. This App is growing faster and becoming more powerful.",
+   "date": "2021-03-02",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Just a short comment to say that the app is good, but also of note is the level of support provided. I had a one-to-one call with Spectrum Support earlier, and my issued was addressed immediately. Great service - and I'm extremely grateful for the help.",
+   "date": "2020-08-19",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "This is a nice add-on. But 'Add term with highlight panel' does not work in Datacenter version. It isn't core function, but very useful. Therefore I hope will be fixed this bug.",
+   "date": "2020-07-26",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "Hi, The app looks good. we are evaluating it for a customer with 2,000 Server users. It there a plan for adding the possbility to easily add images to the term definition? I saw there is an HTML option, but this is not relevant for us since most of the users would not know how to write HTML. The users expect to be able to jsut copy-paste images into the Term definition. That's a critical requirement for the customer.",
+   "date": "2020-02-25",
+   "migrated": false
+  },
+  {
+   "stars": 2,
+   "review": "> The support for highlighting content with special characters like Chinese or Japanese will be supported in version 4.3.0 expect for third week of July. I installed latest version, but it doesn't work. Is this feature postponed?",
+   "date": "2019-08-07",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Hello! Tell me please, does this plugin support the Russian language? I add Russian letters to the glossary, the search is performed, but when you hover over the term, information from the glossary is not displayed",
+   "date": "2019-07-04",
+   "migrated": false
+  },
+  {
+   "stars": 2,
+   "review": "Hello Team, When you guys are planning to release Glossary for version 6.15.2 ? I have purchased the licence but cannot use it with my current version of confluence because of incompatibility. Thanks",
+   "date": "2019-04-14",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "I'm really liking this plugin and look forward to the new version coming out soon. One thing which I have noticed is that if a user turns off the \"Find Term in All Glossaries\" icon at the top of the page which turns off all the highlights to words in the glossary, if he then goes to a different page and then returns to the previous page, the feature is turned back on again. Is that a feature or a bug? Could there be a user preference whether the highlighting feature is turned on or off?",
+   "date": "2018-11-20",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "I'm reviewing glossary add-ons and yours looks interesting, however it would be really compelling if there were a macro to display a table of terms (and their definitions) referenced in a document/page. Though not necessary for online usages, it goes a long way to automating a glossary section when exported to PDF/Word or printed.",
+   "date": "2018-10-31",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Hello Spectrum Groupe, when do you plan to release Version 4.x.x? Best regards Alexander",
+   "date": "2018-10-31",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "I cannot find how to import existing glossary data from an excel file. Can someone help?",
+   "date": "2018-08-31",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "I got a fast reply from spektrumgroupe and the new version of Glossary. It works fine now and is a helpful add-on for our confluence implementation. The issue I had: I'm trying to work with your Glossary, but I have a question concerning the collaboration with Atlassians Jira. Is it possible to link a glossary term to a jira ticket and vice versa? BTW: I'm facing the same problems as Ekaterina described a few comments earlier. After adding a term with the letter P, I find several letters P in the Dashboard now. Delete or update are producing even more P - looks funny, but is not what I wished.",
+   "date": "2018-08-16",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "I gave this plugin a try, it looks good and i love the new features specially the highlight of abbreviations and synonyms.",
+   "date": "2018-08-15",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "When are you guys releasing the functionality for importing glossary items from a CSV-Excel file. We have tons of glossary items that we have to manually create as the feature of importing is not currently available. This is a very good plugin, but the only hesitancy we have is the volume of manual work requires to create these glossary items",
+   "date": "2018-08-01",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "When will Glossary support Confluence 6.10? Have a fresh installation here and really need to implement this great AddOn!",
+   "date": "2018-07-24",
+   "migrated": false
+  },
+  {
+   "stars": 2,
+   "review": "I'm evaluating this addon.I found that every time I add a new term this addon duplicate the 'Letter' and I can't find a way to delete the duplicated letter.",
+   "date": "2018-07-02",
+   "migrated": false
+  },
+  {
+   "stars": 2,
+   "review": "Hi, I tried to update Glossary add-on from 3.3.1 to 3.4.0 on Confluence 6.9.0. After update it doesn't work: when highlighting the term, the definition card is shown blank the same letters are duplicated multiple times - f.e. at first time shows 5 or more letters A and when I refresh the page more blank A letters are adding to the overview page global configuration page looks strange - it shows by default that the glossary is activated in all spaces, but when I open the configuration pop-up window in the left side, the switcher which activates this option is off. I returned to the previous version 3.3.1 and it works. I sent this message to the support but didn't receive any answer.",
+   "date": "2018-06-29",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "This is great and works like i expect. If you will also highlight the synonyms (which can be entered already), this plugin will be exactly what we need. I cant recreate the problem ezequiel mastrasso is having: it will show 2 definitions if i have registered \"word\" and \"word document\" for example. *EDIT* Thanks for the Update, Synonyms work great. I have one more suggestion: It would be great to have an option in the space setting to only include selected Glossaries. At the moment it is limited to All or Own Glossary only. This should not be too hard to implement ;)",
+   "date": "2018-06-27",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "This is a pretty good plugin for larger organizations but it hasn't been updated in over 6 months. I wonder if it is dead? We use it and works pretty well, though we wish the searching of terms was more useful and integrated with general confluence search.",
+   "date": "2018-03-08",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "Great tool! The only drawback atm is that it doesn't support multi word definitions. If you have 2 definitions, for ie: \"word\", and \"word document\", it highlights \"word\" only. Eze",
+   "date": "2018-02-19",
+   "migrated": false
+  },
+  {
+   "stars": 2,
+   "review": "Almost there - it needs to understand that acronyms, plurals and synonyms should all be recognized and highlighted as one definition. That is a significant limitation",
+   "date": "2018-02-09",
+   "migrated": false
+  },
+  {
+   "stars": 2,
+   "review": "The extension would be very helpful, but there are two major issues: Acronyms and Synonyms are NOT highlighted - that means you have to duplicate all entries...",
+   "date": "2017-12-22",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "It is a great plug-in with a lot of potential. I am trying to use it to automatically cross-reference terms while reading documents eg. using the Glossary as a DDL and then browsing through interface specifications etc. The tool does this, however, am patiently waiting for a critical feature i.e. ability to bulk upload Glossary entries from a spreadsheet etc. Manually entering 2k+ entries isn't viable .. also, ability to customize the Glossary fields would be a huge plus. Unsure if this tool is just someone's hobby or whether there is serious development power behind it ..",
+   "date": "2017-10-18",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "A very good tool, which i.a. helps to understand articles quicker by highlighting glossary terms on demand. However, it doesn't highlight abbreviations and synonyms, which forces the user to add a separate term for each synonym, form (e.g. plural), abbreviation etc. Dear Spectrum Groupe, do you plan to add highlighting abbreviations and synonyms in any of the next versions?",
+   "date": "2017-02-10",
+   "migrated": false
+  },
+  {
+   "stars": 1,
+   "review": "It does not work - after installation it crashes confluence down Cause: java.lang.NullPointerException at fr.spectrumgroupe.confluence.plugins.glossary.actions.GlossaryAddTerm.execute(GlossaryAddTerm.java:39)",
+   "date": "2016-12-08",
+   "migrated": false
+  },
+  {
+   "stars": 2,
+   "review": "The Add-on itself is nice and I would love to use it, but it's not compatible with Scroll Translations. This makes it useless for me.",
+   "date": "2016-09-19",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Hi, the good news is that this feature is amazing. The \"bad\" news is that I am using it \"improperly\", on purpose. I mean, instead of using it as intended and write short definitions or explanations, I am converging these terms with my labels to show in which pages or blog posts that term is used, hovering with the mouse in a nice way (I think). To be clear: GlossaryTerm|GloTerm=\"holyday\" ContentByLabel|cql=label=\"holyday\" And it works perfectly. The words are almost all correctly highlighted as well as the glossary box when I hover. Almost, because the words that I have in one column, inside a \"space news\" (https://docs.refinedwiki.com/display/rwot/Space+News) are totally messed up after the highlighting, and nothing change if I click again to make disappear the highlighting. Let's say that I have the following line, before: \"New article about working with xyz on windows\" when the highlight is applied I end up with something like (one line highlighted, the next is not, one line highlighted, the next is not and so on): \"New article about working with xyz on windows\". Clicking again on the button makes the highlight disappear but the text is left messed up and I need to reload the page. Now, I am aware that I am not using it as intended, but did I do something wrong? Any advice about how to fix or, at least, figure out what is the reason? I am having a look with Chrome devtools but I am not so good with CSS. Thank you very much :)",
+   "date": "2016-07-07",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "",
+   "date": "2016-06-13",
+   "migrated": false
+  },
+  {
+   "stars": 1,
+   "review": "Currently evaluating this plugin. I created a glossary entry \"APO\" and added to a page so that the glossary icon found it. Cool. It does not find it though when it was placed between parenthesis \"(APO)\". This is a show stopper for me. Juan Carlos---",
+   "date": "2016-04-06",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "UPDATE: Glossary is now much better since version 3 with some of the search issues resolved. A big search issue still remaining is that the glossary labels, abbreviations and synonyms do not show up in Confluence search results. On balance I do recommend this product for your glossary needs. Some recommended improvements / features: 1. Ability to show all or selected letters as a full list / table with the ability to export / print it. 2. Ability to import a csv / Excel of terms. We already have a substantial glossary built as a table - entering one term at a time would is a huge job. 3. Glossary labels, synonyms, abbreviations to show in Confluence searches",
+   "date": "2016-04-01",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "",
+   "date": "2016-03-03",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "",
+   "date": "2016-02-24",
+   "migrated": false
+  },
+  {
+   "stars": 2,
+   "review": "Currently evaluating this as an alternative to constructing our own glossary templates. The plus points first. The blueprints are excellent and very well presented. The division of glossaries into space specific areas and presentation in the global glossary are superb. Love the way we can highlight terms within a page and hover over the definitions - although I have not tried this on a page with many terms so can't comment on the speed issues as reported by another reviewer. Love the addition of synonyms and abbreviations. Now for the bad points. As others have stated the search is simply not usable. If you know the actual term then you can find it, otherwise you are never going to find the correct term. The search - and term highlighting - also ignores the abbreviations and synonyms - which kind of defeats the purpose of including them. I'd also like to see each term on its own page rather than combined within a single page - but this is probably a personal choice. I think this is a great start, and we are seriously considering running with it (the price point at our license level makes it a no-brainer) however I feel addressing the following issues would actually make this plugin perfect: 1. Improve the search to work within the term, abbreviations, synonyms and description. 2. The term auto highlighting needs to work with plurals (if I have a definition for \"vehicle\" then the word \"vehicles\" should be highlighted). 3. Option to place terms definitions on separate pages and use excerpts to auto-generate a page like the current one that contains all definitions for a letter. 4. Clicking on a term that is highlighted should take me to the page that defines the term. 5. Highlight synonyms and abbreviations too! 6. Show the definitions under the letters that are applicable to the abbreviations and synonyms. 7. A picky one this - but I would like the auto highlighting to have a white background and just underline the word. The above would make this a super useful plugin and I suspect increase sales dramatically. As it is I am contemplating my choice between this and the tutorials by Terrence Caldwell detailing a roll-your-own solution.",
+   "date": "2016-02-09",
+   "migrated": false
+  },
+  {
+   "stars": 1,
+   "review": "",
+   "date": "2016-01-15",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "",
+   "date": "2015-12-03",
+   "migrated": false
+  },
+  {
+   "stars": 2,
+   "review": "I would like to complain about the missing functionality/ bug of this plugin. The search box in the glossary navigation area only works within the letter you have selected, but not for the whole glossary. So, I want to stress, that it is really important for all our users to fix this lack of functionality as soon as possible. When I could expect it?",
+   "date": "2015-12-01",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "",
+   "date": "2015-11-12",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "",
+   "date": "2015-05-05",
+   "migrated": false
+  },
+  {
+   "stars": 2,
+   "review": "I do like the idea of having such a add-on to Confluence but it seems that the pricing is far off the value added. Paying $2000 or $3000 for a 1000(+) user license only to add what would be called a gimmick, cuts it before even evaluating it. Also the second problem is that the vendor is not yet Atlassian approved. Why this matters? Due to previous bad experiences with other plugins, we recently introduced a policy of using plugins only from verified vendors.",
+   "date": "2015-02-17",
+   "migrated": false
+  },
+  {
+   "stars": 2,
+   "review": "The basic glossary creation functionality works really well, however the \"glossary icon\" does not appear on as it is supposed to and we have so far not been able to get any response to our questions related to this issue. The fact that this icon is missing severely reduces the usefulness of the plugin.",
+   "date": "2015-01-28",
+   "migrated": false
+  },
+  {
+   "stars": 2,
+   "review": "I had high hopes for this plugin but was disappointed. I think the real strengths of a glossary tool should be on the search side and that is where this plugin is weakest. Here is what I found in version 2.1 running on Confluence 5.5.2. ADDING TERMS * Adding via the glossary navigation bar is straightforward and works well. * You have to add (initialize) a letter before you can add a term to it. This is an unnecessary step for a user. * Adding a term from another page by selecting the term seems easy. This is exactly how I would expect it to feel. * Adding the first term for an uninitialized letter fails. It adds only the term, not the definition. FINDING TERMS * Labels are not hyperlinks, thus I found no real use for them. * Search finds only the term, not any words in the definition! This is a huge presumption that you know what you are looking for and you don't need any context help finding it. * Search box in the glossary nav area only works within the letter you have selected. Not cool. If you know the letter you need, you have already performed half of the searching. This should work globally across all letters (or have that option for sites that do not have thousands of terms). * Highlighting defined terms on a page is slow, has no progress meter, and the results are very hard to read. Once you find a term, however, the definition is easy to read. * Search is not integrated with Confluence search, so you can't find terms from a non-glossary page. The irony is that Confluence finds definition words but not terms -- opposite of what the Glossary Search does.",
+   "date": "2015-01-21",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "This is a pretty good plugin. Also I wonder if there is any way to change the colour of the highlighting? (which is blue at the moment). Also the small book icon that needs to be used is great for educated audience but not really intuitive for new people. Is there any way to add \"Glossary\" on the side of the icon?",
+   "date": "2014-10-13",
+   "migrated": false
+  },
+  {
+   "stars": 2,
+   "review": "This has a lot of potential, but it doesn't work the way I want it to. Our organization has a lot of acronyms. I'd like to be able to enter a definition once and use that definition for the term AND its abbreviation. For example, I enter a definition for \"Electronic Funds Transfer\" and save that. Pages with the term \"Electronic Funds Transfer\" will point to this definition. So far, so good. But I also want the abbreviation \"EFT\" to point to this same definition. I could not find a way to make this happen. I also agree with Thomas Jackson's review, where he says that the terms on a page should automatically render in bold when the page loads. Under the current design, the user has to know to click on the book icon at the top of the page to make the links to glossary terms show up. Users shouldn't have to do this. This seems to be the best tool available for solving this problem, yet it still falls short.",
+   "date": "2014-10-06",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Very useful plugin! Please tell me is it possible to translate plugin to Russian? I can help with translation =) Please contact me if you are interested in my offer!",
+   "date": "2014-09-26",
+   "migrated": false
+  },
+  {
+   "stars": 2,
+   "review": "I found the glossary easy to set up and get started with. I like how easy it is to add terms and the live search on the letter pages is pretty slick. I would like to be able to do a global search of our Confluence instance and have glossary terms show up in search results. For now it doesn't seem to find them. I think that is because each term is added inside of a macro, rather than as direct page content. The ability to search globally is a key requirement for our organization so without that I don't think this tool will work as a solution for us. Another thing I would like to have in this tool is the ability to see when a term was added, updated, and by whom. I like that the glossary has the ability to add labels to a term. This would really help with our ability to organize and filter terms across multiple business units. I am having a problem where the labels don't do anything. They show up by the term but they are not clickable like in regular Confluence pages where you can click a label and filter down to everything with that label. The labels in the glossary terms don't seem to function at all. Is this a glitch with the tool? I would love to hear back from Spectrum Groupe regarding these features to know if there is anything that can be done to add/fix these concerns. This is a good tool but needs to extend some functionality to make it a really useful solution.",
+   "date": "2014-09-19",
+   "migrated": false
+  },
+  {
+   "stars": 1,
+   "review": "Considering the price of the unlimited user license, this plugin should come with a person that would take care of building and keeping the glossary. Is like being 10x more expensive than what we would consider fair-price.",
+   "date": "2014-08-04",
+   "migrated": false
+  },
+  {
+   "stars": 2,
+   "review": "v1.2 - This plugin has a lot of potential but it has some big holes that prevent it from being truly useful to us at this time. Some of our greivances amount to little more than an annoyance, but several are show-stoppers for a corporate knowledge base trying to incorporate a large, pre-existing, interrelated body of terms into an easy-reference format. I'll continue to watch this plugin, though. With further development it may very well one day meet our needs. Pros *One page per letter *Alphabetizes terms *Can embed macros in definitions when editing the page *Terms search *Attractive, organized overview and terms pages Cons *Must be on corresponding letter's page to add a term *Must edit page to add macros to a definition *When editing, terms are in order of entry, not alphabetical *Search Terms box doesn't search, it filters the current letter page by term *Site search can't read terms, only definitions *Can't link to a term, only to a letter page (terms are tagged with the outdated \"name\" attribute rather than the anchorable \"id\" attribute) *No import feature",
+   "date": "2014-05-24",
+   "migrated": false
+  },
+  {
+   "stars": 1,
+   "review": "I agree that this is a cool plugin. I too need the ability to reference a glossary term from arbitrary pages. Seems to me a glossary should be connected to one or more spaces via a parameter in the glossary overview macro. When a page author adds a word to a page in a space associated with a glossary, the term should auto-magically render in bold, and the term definition should show on mouse hover as a tool tip. In other words, the page author shouldn't have to do anything special to connect words on his page to the glossary, and the page reader should easily be able to consume the definition. The glossary is cool, but it needs to be super simple for page authors and page readers to leverage it.",
+   "date": "2014-02-25",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "This is a very neat plugin -- we like how it makes browsing very easy. We believe we are going to purchase this! Two things that could give it 4 stars! 1. Ability to render macros within a Glossary Term https://answers.atlassian.com/questions/255395/allowing-macros-in-the-glossary-plugin 2. Ability to reference a Glossary term from another page, a macro where you could pick a glossary page and then a term and it would render it as a link to that term. This could be as straight forward as adding anchors to the glossary terms page so people could link to them, example: [MyTerm|ASPACE:MyGlossaryPage#MyTerm]",
+   "date": "2014-01-27",
+   "migrated": false
+  }
+ ],
+ "Smart Terms Glossary [4.2*]": [
+  {
+   "stars": 4,
+   "review": "This is a great glossary-type app. I've been involved in migrating the app from Data Center to Cloud, and the creativas team has been great at working around Atlassian's Cloud restrictions on HTML manipulation. You can use a browser extension (Chrome/Edge) or special preview mode to get the highlighting. While Cloud has Atlassian's new highlighting features (Rovo/Atlassian AI), those don't have any way to manage terms at the space or site level or embed them using macros. We also have a very large instance, and the whole creativas team met with us to solve some issues so that things like picking a term space are very fast at scale.",
+   "date": "2025-09-05",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "This is a great tool that provides much needed functionality to ensure that common or important terms or phrases have a single definition that does not require edits to multiple places. It requires a browser extension and while those extensions are not for every browser, they have them for some of the most common ones (Chrome, Safari, and Edge). Besides the functionality, the ability to make connections between related word, such as acronyms (or any other connection that you want to establish), is tremendously helpful. What this app is really missing, and not sure how this can be done, is to prevent a term from showing up when the context does not work for it. For example, Task Work Orders (TWO) and the #2 will create issues unless you term Task Work Order and use TWO as an acronym. Other example include \"Security\". If the reference is for data security rather than physical security (or some other variation), the context can be confusing. Even with some minor limitations, this app has solved a lot of problems for our content and removed the need to have terms defined in multiple places and minimized our need to use excerpt and excerpt include macros. By the way, the team behind this app is incredibly supportive and helpful. We have Smart Courses too and the people who own and operate this company have basically done everything possible to help us out, added new features when we asked for them (within a reasonable timeframe - not everything needs to be immediate), have troubleshooted any issue we have brought to their attention, and ALWAYS fixes whatever issues there are really quickly. I highly recommend this company and their products - they put a lot of care, consideration, and love into them.",
+   "date": "2025-05-06",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Great app for using glossaries in Confluence. Recommend!",
+   "date": "2024-12-16",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Smart Terms is the best glossary app in Atlassian Marketplace. It allows us to manage our 7000k term glossary. The support service is fast and helps manage any issue we've had during our deployment process. Update april 2025: Best support service, gave us a fix after Atlassian's major look&feel change.",
+   "date": "2024-08-05",
+   "migrated": false
+  },
+  {
+   "stars": 1,
+   "review": "Doesn't work in firefox (presumably because mozilla is stricter on apps that violate security constraints) which makes it a bit useless",
+   "date": "2024-07-10",
+   "migrated": false
+  },
+  {
+   "stars": 1,
+   "review": "Glossary terms in an article are not highlighted. Enabling this feature requires a browser extension. Not doable for our company.",
+   "date": "2024-02-20",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "We have a lot of different teams using a common knowledge repository based in Confluence. The app is easy to use, easy to add terms, and easy to update terms. It's very helpful that we can also publish a page with the list of terms that someone can easily browse. Only issue we've have is that, as more terms are added, pages become more crowded with popups. We've been asked if there is a way to turn off popups for a user session rather for each page. The other suggestion is to have only the first occurrence of a term on a page be a popup. Because of the popups, we have scrubbed the terms to ensure only terms that have caused confusion or have multiple meanings are included. We have a supplemental page with other, more commonly understood terms, that can be used for reference.",
+   "date": "2023-08-24",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Great app, well designed and working very well. Support was quick to fix the little translation issue we had with onboarding screens. Keep it up ! :)",
+   "date": "2023-07-20",
+   "migrated": false
+  },
+  {
+   "stars": 1,
+   "review": "The importing tool is broken as far as I can tell. Half my terms dont import from the template excel sheet provided by Creatives. -Cleared cache and tried different browsers -Checked and ensured heading levels matched requirements -Deleted and reinstalled the app from my workspace -Some terms still did not import successfully None of the above worked...",
+   "date": "2023-06-14",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "No review yet as we are just beginning to use the product BUT: - tests on our test instance are successful; we are amazed by the functionalities of the product and its responsiveness; eager to use it \"in real life\" with several spaces and glossaries - fast (always less than 24 hours, usually within the working day) and accurate responses to any question to the support team, even for uncommon use cases; a real and fluent dialog has been engaged each time it was necessary. Great feeling that you won't be left alone with your question ! Dramatic difference with our previous Glossary provider",
+   "date": "2023-03-28",
+   "migrated": false
+  },
+  {
+   "stars": 2,
+   "review": "",
+   "date": "2023-03-13",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "A couple of things - Creating a Glossary of Terms in a Space works, and creating the union of multiple space glossaries works as a Listing, but I don't see the alphabetical link like I do with the Space Terms. Is there something I'm missing? Also, adding a math term doesn't appear to work with the 'fx'. Can you please check on this as it's critical for business term methodologies - which requires a bit of math? I CAN copy/paste a math formula from from, say, Wikipedia, which is good. So if you can fix actually putting in formulas that would be great.",
+   "date": "2023-02-21",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Great app & great customer support!",
+   "date": "2022-12-20",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "The app works nicely as intended. I appreciate the UX for the end user and the intuitive and flexible admin capabilities. Also, I found a bug, floated it to their support team, they resolved it fairly quickly, and communicated it to me. I hope that at some point the highlighting feature will crossover to JIRA, because then this will be a no brainer product for every company that uses JIRA and Confluence in tandem.",
+   "date": "2022-12-20",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "We are an Atlassian solution partner and use Smart Terms when implementing knowledge bases. The ease of use, import capabilities and quality of support are really what makes it stand out to both our customers and ourselves!",
+   "date": "2022-10-11",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Smart Terms is a great tool that helps you provide users with additional information on any Confluence page and you're very free in regards to what you put into the definition of any word / phrase. It is also very easy to disable the highlighting for a page if you have pages that shouldn't have words from the glossary highlighted. A big bonus to mention here is the great support from the vendor. We have always had our issues resolved very soon after raising them and bugs are fixed incredibly fast after submitting.",
+   "date": "2022-09-15",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "This app is great. It seems to do almost everything I want it to. It feels polished and reliable, which is what you need if you are going to invest a lot of time creating a glossary in Confluence using the app. The only thing it doesn't support is multiple definitions of the same term. Support is very good.",
+   "date": "2022-09-14",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "Good, prompt support from the team. Chrome was (and still kind of is) causing me issues with the extenstion though",
+   "date": "2022-07-20",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "Quick support and great concept. Would be even better if it offered direct API-Access for other terminology management software. :)",
+   "date": "2022-07-14",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "I decided to try the plugin in my company based on recommendations of a team member who used to use this app in his previous company. There were some problems with labeling terms and a small feature request on related vocabulary in the trial install. Both were quickly processed by the team, thanks to Hichem and Firas. Public release of the glossary will take place in nearest future, but all users from a test group were highly satisfied with the tool.",
+   "date": "2022-06-15",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Intuitive Product and Responsive Support/Dev Teams I'm new to Confluence and all things Atlassian. I quickly found that I needed a glossary for my work and that built-in Confluence functionality wasn't going to be sufficient. Smart Terms came up repeatedly in my searches, so we gave it a try. Though not perfect it's really, really great for managing terms. The ability to define terms (including related terms) and display global highlighting has improved on the way I write technical documents and given me the flexibility to define-as-I-go or simply create an entry and define it later. Smart Terms has become critical to how I work in Confluence to the point that I don't know how I'd work without it. In the last paragraph I mentioned that Smart Terms wasn't perfect (but very close). During my product trial (before paying for anything, keep in mind) I found what I thought was undesirable behavior in how compound terms were highlighted. After some trial and error I was able to describe what was happening and what exactly I wanted. I submitted a case to Creativas Support. Within a day I had a response back that the dev team was able to reproduce my issue and they were actively working on a fix. Less than two weeks after first contact, they reported that the issue had been fixed. Thanks to Khawala and the dev team for such a refreshingly pleasant and prompt handling of the issue. I'm looking forward to seeing what more they can deliver with the product, but from my vantage point I think they earned all 4 stars.",
+   "date": "2022-05-23",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "Installed the app based on recommendations online and the Atlassian Staff Pick. Our company operates in a complex industry, and we are growing our team. Need this capability to ensure we can onboard new staff and keep consistent understanding across our groups. Trial install had some problems (scroll bar panes, label feature), but the support team clearly worked with Creativas' engineers to get a fix prioritized. Since then, our guys have given it good feedback, and looks like we'll get great use out of the glossary. Thanks to Khawla and Firas.",
+   "date": "2022-05-04",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "We are currently testing the tool and overall it is very positive. However, we are often asked by the users if it is possible to order the terms list based on the acronyms instead of the long versions of the terms. Usually users built their own lists also based on acronyms. We didn't find any possibility to switch this. Is it possible somehow, or can this be implemented with a simple \"Sort by ...\" button in the terms list?",
+   "date": "2022-04-21",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Smart Terms is for me a perfect plug-in. The functionality is great and helps me and others to really come to terms with the vocabulary in use. With the new features added recently I had some questions and was very positively surprised of their support and how they helped and assisted. Great Product and great support.",
+   "date": "2022-04-19",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "",
+   "date": "2022-02-02",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Outstanding customer support! We really love the product and the people behind it. The Customer Success team went out of his way to help us with questions and support and it all worked out in the end. Thank you very much for this experience!",
+   "date": "2022-01-25",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "",
+   "date": "2021-11-24",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Very satisfied with the customer support! Quick with their response, going extra mile to understand the clients issue and solve it asap. Recommended!",
+   "date": "2021-11-04",
+   "migrated": false
+  },
+  {
+   "stars": 1,
+   "review": "",
+   "date": "2021-10-13",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "Nice and handy app for glossary management. The bigger your company is, the greater use of this app is. In my opinion, access to it should be embed into newcomers onboarding process. The only downside is the not so intuitive installation, but this should not be an issue on a corporate level.",
+   "date": "2021-10-12",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "Good basic app for terminology management. Term highlighting is a nice feature. Easy enough to use and set up (at least for Confluence Cloud). It's a well-regarded app across our organisation and many people can't envision getting rid of it. The ability to create relationships between terms to create taxonomical structures would make this really powerful.",
+   "date": "2021-06-01",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "4 stars, great add-on, great support, A+++++++!",
+   "date": "2021-05-03",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "We tried to use a glossary for cloud version. Google chrome and firefox extensions seems to be not recogbized as installed in our browsers. Trying to click on \"glossary\" button results in \"install an extension\" even if it's already installed. Secondly, after installing an extension terms are highlighted but definitions are not displayed by hovering or clicking on terms in document's text. Server version seems to work as expected. So my opinion: 1. It's a mature enough extension for server (or maybe dc) version 2. For cloud version seems to be more efficient to look up for another solution. 3. Pricing for cloud and server are reasonable for light installations. For large ones maybe should consider splitting instances (for example if don't have an urge to support glossaries for everyone).",
+   "date": "2021-04-15",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "This is a very nice app, we tried it out and liked it quite a lot. However your pricing policy doesn't make any sense. We have around a hundred people on confluence, and correspondingly we would have to pay around $220 a month - a sum which no software should ever cost, the least of all a confluence addon. We are not gonna use your product going forward. Please, let us know when you change the pricing to something more reasonable. Thanks",
+   "date": "2021-04-07",
+   "migrated": false
+  },
+  {
+   "stars": 1,
+   "review": "UPD. It's not working! Should all my colleagues install the extension in a browser? Seriously? And what you say about Confluence Mobile App? Safari browser support? And where in your documentation says about the extension requirement? I want to use this add-on without a Google extension.",
+   "date": "2021-03-19",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "3 stars due to it being the best glossary app on the marketplace. However, it leaves a lot wanting. There is no option to highlight terms within other terms, rendering it useless for our data dictionary (which was the intended usage). Referencing existing terms within other terms is a must-have for any glossary. Other simple features such as CTRL+S to save and mass updates to terms (e.g. add a label to multiple terms) are missing as well.",
+   "date": "2020-12-04",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "great addon, wish chinese could be supported",
+   "date": "2020-07-06",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Simple and easy to use glossary, makes it so much easier to define company-wide abbreviations and promoting the wording to the public",
+   "date": "2020-06-08",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Nice features - such as defining certain areas (page titles, headings etc.) that you want to exclude from highlighting. As far as I can tell they have fantastic staff as well. Definitely a recommendation!",
+   "date": "2020-05-18",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "I can't say enough good things about this plugin! Smart Terms has been a godsend in helping us catalog the terms for our department's data dictionary. When an issue arose where our imports weren't working properly, the support we received from the TechUp team was second to none and they were with us every step of the way in debugging the issue. I applaud Kevin and the TechUp team for all of their hard work and appreciate all their help in keeping terms a top notch product!",
+   "date": "2020-03-19",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "I tested the plugin. Compared with other Glossary Plugins there are no errors. This plugin is implemented in a smooth way. It is used native Confluence objects. If you have a feature request, SW Vendor will consider it and provide you the next release very fast. Cooperation with SW Vendor is very good :)",
+   "date": "2020-02-19",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "Good plugin, using it extensively, but a couple of things would make it even better: * Can't use sub-script or super-script (everything else exists - bold, italics, underline etc) * No dedicated \"Related to\". I use \"Other\" as the classification, but would be good to get that. * No dedicated \"Reference Page\" where the term might be defined - again almost all of my terms have that added in the link manually, but sometimes I forget. If this was one of the attributes of a term that would be good too. The additions above would make this superb as a plugin.",
+   "date": "2020-01-31",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "Very intuitive to use Terminology Definition, and I like the feature-rich Pop-Ups in the content which do not influence the storage format of pages itself. PDF files from external sources seem not to work, we get a \"Failed to Load PDF document\" when including this file in our Terminology: https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf The Elephant in the room: What I'm missing in this addon is functionality for using this within End-User Documentation (PDF and HTML): > Support for PDF Exports - I see no way to get Terms into a printable format at the end of an exported document. Is there a way to refer or include the terminology page someplace else without manually having to export my terms and \"Layout\" them in myself? > How about support for Translations, maybe Versioning of Glossary entries? On both points I'd suggest getting in contact with K15t and their \"Scroll\" series, because their Addon is missing a good glossary solution but otherwise has everything else for Content Publishing. Having Smart Terms functionality their Live-Viewport HTML view and PDF exports would be amazing.",
+   "date": "2019-05-21",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Such a great plugin! We've deployed Smart Terms on a large instance (2000+ wikis) supporting over 26k users who have a multitude of terms/acronyms to navigate while trying to complete their work. Not only does this allow us to provide helpful information for our new employees, but also many of our experienced employees who may be on a cross-functional team/project. The quick response and support from Kevin/TechUp had been amazing, they really value and respond to feedback, and even implemented a suggestion that I had (only highlight first matching term) within a few days!",
+   "date": "2019-05-06",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Very cool and funny glossary. Very simple to use!",
+   "date": "2019-04-10",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "For me the best glossary plugin on the whole marketplace. Very fast Support!",
+   "date": "2018-12-14",
+   "migrated": false
+  }
+ ],
+ "Glossary - Terminology Manager [3.6*]": [
+  {
+   "stars": 1,
+   "review": "testing for migration to the Cloud ... seems like full of bugs !",
+   "date": "2023-05-25",
+   "migrated": false
+  },
+  {
+   "stars": 3,
+   "review": "Blocker: No Firefox Plugin. Very basic administration in the cloud version. It is not the same as seen in the video! Missing: - No filtering by tags - Search does not find anything contained in the description Anything else is as imagined. Seems to be fast.",
+   "date": "2022-04-29",
+   "migrated": false
+  },
+  {
+   "stars": 1,
+   "review": "Too many bugs. Really a pity - good simple design...",
+   "date": "2022-03-22",
+   "migrated": false
+  },
+  {
+   "stars": 1,
+   "review": "Demo video is misleading - interaction is absolutely not the same for Cloud as shown in video. When I deleted the term that was used on the page, than reloaded page, than clicked the A icon to highlight terms, the page stopped loading (error 1AMXKE5).",
+   "date": "2021-02-19",
+   "migrated": false
+  },
+  {
+   "stars": 2,
+   "review": "Seems to be a large discrepancy in feature set between the cloud and server versions when it comes to settings and management. There is no duplicate term detection so it is possible to create several duplicates. There is no term highlighting in the cloud version so it isn't clear what is a defined term and what isn't. Will continue testing but so far, not as useful of a test for another server instance as I had hoped.",
+   "date": "2021-01-24",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "After having used other options as glossary, we finally implemented this one and we don't regret it - very well customizable with the option to have *one* glossary in the whole confluence-instance, a superior support and a thought-through concept. A must-have addon!",
+   "date": "2020-09-22",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Really nice tool, with some space to improve. Term status (\"Approved\", \"Proposed\") is not being tracked and there is no way to track who and when approved it. So it is just a text label, but this is a minor issue. Support is at superior level.",
+   "date": "2020-01-29",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Don't look any further, you've found the perfect Glossary app for Confluence! After using another glossary app for several years which lacked key features and the vendor making promises they couldn't keep, we started looking for a proper alternative. Which we found in W Knowledge's Glossary app. Though the basic idea was already very good, we asked for some improvements and also found some bugs while trialing the app. The vendor responded instantly and was always helpful. Bugfixes and feature requests were implemented very fast, sometimes within days. The app is, from our point of view, now at an enterprise level in both reliability, features and support. Thanks Jennifer and team! Keep it up!",
+   "date": "2019-06-05",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Finally a great and useful Glossary. I appreciate that is smoothly integrated with Confluence features and also the highlight mechanism. Singular/plural, synonyms, abbreviation or other forms are all highlighted, that\u2019s awesome! Quick and accurate support! Appreciated!",
+   "date": "2019-01-22",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "",
+   "date": "2018-10-25",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "I really like how this is coming along. There are some small bugs still (cant \"unhighlight\"; marking text with mouse still shows view.action tooltip; creating page with same name dialog doesnt close). But this works exactly like i would imagine a glossary in confluence. Language functions are good (improvement: same term title in different languages). i will watch out for this!",
+   "date": "2018-10-24",
+   "migrated": false
+  }
+ ],
+ "Glossary for Confluence Cloud [3.6*]": [
+  {
+   "stars": 4,
+   "review": "",
+   "date": "2022-02-09",
+   "migrated": false
+  },
+  {
+   "stars": 1,
+   "review": "An application that simply displays a glossary as wikipedia does with such a per-user fee is grossly overpriced. First, it should be a feature of Confluence itself... But well, with 100 users, it's $1500/year for a simple glossary. A pure joke. And for that price : - you must tell all your users to install a chrome extension to see the highlights (sorry people who use firefox or safari) - the software can't handle the accents, so for a word with two accents like \"d\u00c3\u00a9j\u00c3 \", you must add synonyms like \"deja\", \"d\u00c3\u00a9ja\" and \"dej\u00c3 \" for this plugin to handle it - It doesn't handle acronyms either! If you create IT for \"Information Technology\" for example, it will highlight \"it\" in any sentence like \"It is cool!\" (but it's not) The plugin itself works well but that's not the problem. It's far too expensive for so few features. At this price, it should put a coffee on my desk every morning.",
+   "date": "2020-08-20",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Fantastic app. Very intuitive and well integrated. An invaluable addition for our team.",
+   "date": "2020-04-10",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "Easy add-on to set up and use. The developer has very quick response time for any questions asked and outstanding support for a minor issue we had. Highly recommend this if a glossary of terms is needed for your team(s). Randy",
+   "date": "2020-01-30",
+   "migrated": false
+  },
+  {
+   "stars": 1,
+   "review": "",
+   "date": "2018-11-30",
+   "migrated": false
+  },
+  {
+   "stars": 2,
+   "review": "",
+   "date": "2017-10-08",
+   "migrated": false
+  },
+  {
+   "stars": 4,
+   "review": "",
+   "date": "2017-09-22",
+   "migrated": false
+  }
+ ]
+}

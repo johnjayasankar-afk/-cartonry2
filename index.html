@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cartonry — packaging dieline generator (RSC, mailer, tuck carton, tray)</title>
+<meta name="description" content="Generate production-ready packaging dielines at any size. Regular slotted cartons, e-commerce mailers, tuck-end cartons, trays, sleeves and pillow boxes. Export SVG, true-scale PDF and DXF. Runs entirely in your browser.">
+<link rel="stylesheet" href="styles.css?v=76">
+<link rel="preload" href="fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/ibm-plex-mono-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#f8f6f1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c1410" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cartonry.vercel.app/">
+<meta property="og:title" content="Cartonry — packaging dieline generator">
+<meta property="og:description" content="Production-ready packaging dielines at any size: shipping cases, e-commerce mailers, tuck cartons, trays, sleeves and hexagonal boxes. Export SVG, true-scale PDF and DXF. Everything runs in your browser.">
+<meta property="og:image" content="https://cartonry.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cartonry showing a shipping case dieline with its cut, crease and glue lines.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cartonry.vercel.app/og.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Cartonry",
+ "applicationCategory":"DesignApplication","operatingSystem":"Any browser",
+ "description":"Parametric packaging dieline generator. Produces production-ready cutting templates for standard box styles at any dimension, exporting SVG, true-scale PDF and DXF.",
+ "offers":{"@type":"Offer","price":"39","priceCurrency":"USD"},
+ "featureList":["Regular slotted container","Full overlap slotted container","Tuck-top mailer","Four-corner tray","Telescope lid","Straight and reverse tuck cartons","Sleeve","Hexagonal box","Pillow box"]}
+</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="./">
+      <svg width="28" height="28" viewBox="0 0 64 64" aria-hidden="true">
+        <defs><linearGradient id="brandTile" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c5a42"/><stop offset="1" stop-color="#1a3a2a"/></linearGradient></defs>
+        <rect width="64" height="64" rx="18" fill="url(#brandTile)"/>
+        <path d="M16 23h32v26H16z" fill="none" stroke="#f0f7f3" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M16 23l8-8h16l8 8" fill="none" stroke="#6ee7b7" stroke-width="4" stroke-linejoin="round"/>
+      </svg>
+      Cartonry
+    </a>
+    <div class="hdr-tools">
+      <nav>
+        <a href="#catalogue">Box styles</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#help">Help</a>
+      </nav>
+      <button type="button" class="themebtn" id="themeBtn" aria-label="Change colour theme" title="Theme"></button>
+    </div>
+  </div>
+</header>
+
+<a class="skip" href="#stage">Skip to the dieline</a>
+<main class="wrap">
+  <!-- The page's one H1. It is not shown because the interface names itself -
+       the brand is in the header and the tool fills the screen - but a document
+       with no H1 gives a screen-reader user nothing to land on, and every
+       reference page under box/ has a visible one. -->
+  <h1 class="sr">Cartonry — packaging dieline generator</h1>
+  <div class="app-layout">
+    <!-- ------------------------------------------------ controls -->
+    <div>
+      <section class="panel">
+        <div class="pad">
+          <h2>Dimensions</h2>
+          <div id="errBox" role="alert" aria-live="assertive"></div>
+          <div id="warnBox" aria-live="polite"></div>
+
+          <div class="field">
+            <div class="row spread">
+              <label class="row-label">Internal size</label>
+              <div class="unit-toggle" role="group" aria-label="Units">
+                <button type="button" id="unitMm" aria-pressed="true">mm</button>
+                <button type="button" id="unitIn" aria-pressed="false">in</button>
+              </div>
+            </div>
+            <div class="grid3" id="dimGrid">
+              <div><label for="dimL" id="labL">Length</label><input id="dimL" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="200"></div>
+              <div><label for="dimW" id="labW">Width</label><input id="dimW" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="150"></div>
+              <div><label for="dimH" id="labH">Height</label><input id="dimH" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="100"></div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="boardSel">Board</label>
+            <select id="boardSel">
+              <option value="0.35" data-gsm="280">Folding carton, 350 micron (0.35 mm)</option>
+              <option value="0.5" data-gsm="400">Folding carton, 500 micron (0.5 mm)</option>
+              <option value="1.5" data-gsm="450">Corrugated E-flute (1.5 mm)</option>
+              <option value="3" data-gsm="540" selected>Corrugated B-flute (3 mm)</option>
+              <option value="4" data-gsm="580">Corrugated C-flute (4 mm)</option>
+              <option value="7" data-gsm="900">Corrugated BC double wall (7 mm)</option>
+              <option value="custom" data-gsm="">Custom thickness…</option>
+            </select>
+          </div>
+          <div class="field" id="customTWrap" hidden>
+            <label for="dimT">Board caliper (mm)</label>
+            <input id="dimT" type="number" step="any" min="0" value="3">
+          </div>
+
+          <details class="adv" id="fitDetails">
+            <summary>Size it from your product</summary>
+            <div class="pad2">
+              <p class="muted-note lead">Most people know the product, not
+                the box. Enter what goes inside and how much room it needs, and the internal
+                dimensions above are worked out for you.</p>
+              <div class="grid3">
+                <div><label for="prodL">Product length</label><input id="prodL" type="text" inputmode="decimal" autocomplete="off" placeholder="—"></div>
+                <div><label for="prodW">Product width</label><input id="prodW" type="text" inputmode="decimal" autocomplete="off" placeholder="—"></div>
+                <div><label for="prodH">Product height</label><input id="prodH" type="text" inputmode="decimal" autocomplete="off" placeholder="—"></div>
+              </div>
+              <div class="field">
+                <label for="clearSel">Room around the product</label>
+                <select id="clearSel">
+                  <option value="1">Snug — 1 mm each side (rigid product, no padding)</option>
+                  <option value="3" selected>Standard — 3 mm each side</option>
+                  <option value="6">Generous — 6 mm each side (room for tissue or a card)</option>
+                  <option value="custom">Custom…</option>
+                </select>
+              </div>
+              <div class="field" id="clearCustomWrap" hidden>
+                <label for="clearMm" id="lab-clearMm">Clearance each side (mm)</label>
+                <input id="clearMm" type="text" inputmode="decimal" autocomplete="off" value="3">
+              </div>
+              <button type="button" class="primary" id="applyFit">Use these dimensions</button>
+              <p class="muted-note" id="fitPreview"></p>
+            </div>
+          </details>
+
+          <details class="adv">
+            <summary>Advanced allowances</summary>
+            <div class="pad2 grid2">
+              <div><label for="optGlue" id="lab-optGlue">Glue flap (mm)</label><input id="optGlue" type="text" inputmode="decimal" autocomplete="off" placeholder="auto"></div>
+              <div><label for="optSlot">Slot width (mm)</label><input id="optSlot" type="number" step="any" min="0" placeholder="= board"></div>
+              <div><label for="optGap" id="lab-optGap">Flap relief gap (mm)</label><input id="optGap" type="text" inputmode="decimal" autocomplete="off" value="0"></div>
+              <div><label for="optTuck" id="lab-optTuck">Tuck depth (mm)</label><input id="optTuck" type="text" inputmode="decimal" autocomplete="off" placeholder="auto"></div>
+            </div>
+            <p class="muted-note after">Slot width stays in millimetres
+              whichever unit you are working in: it is the board caliper, and board is
+              specified in millimetres or microns by every mill and converter.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="pad">
+          <h2>Box style</h2>
+          <div class="styles-wrap" id="stylesWrap">
+            <ul class="styles" id="styleList"></ul>
+          </div>
+          <div class="recents" id="recents"></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="pad">
+          <h2>Material &amp; cost</h2>
+          <p class="muted-note">Optional. Work out how many blanks come off a sheet, what each
+            box weighs, and what the board costs you.</p>
+          <div class="field">
+            <label for="sheetSel">Sheet size</label>
+            <select id="sheetSel"></select>
+          </div>
+          <div class="field grid2" id="customSheet" hidden>
+            <div><label for="sheetW" id="lab-sheetW">Sheet width (mm)</label><input id="sheetW" type="text" inputmode="decimal" autocomplete="off" value="1200"></div>
+            <div><label for="sheetH" id="lab-sheetH">Sheet height (mm)</label><input id="sheetH" type="text" inputmode="decimal" autocomplete="off" value="800"></div>
+          </div>
+          <div class="field grid3">
+            <div><label for="gutter" id="lab-gutter">Gutter (mm)</label><input id="gutter" type="text" inputmode="decimal" autocomplete="off" value="4"></div>
+            <div><label for="trim" id="lab-trim">Trim (mm)</label><input id="trim" type="text" inputmode="decimal" autocomplete="off" value="10"></div>
+            <div><label for="gsm" title="Grammage is quoted in g/m² by every mill, in both unit systems">Board (g/m²)</label><input id="gsm" type="number" step="any" min="0" placeholder="auto"></div>
+          </div>
+          <label class="check">
+            <input type="checkbox" id="allowRot">
+            <span>Board has no grain direction — blanks may be turned 90°
+              <em>Corrugated flutes and carton grain run one way down the sheet, and turning a
+              blank changes how the finished box behaves. Leave this off unless your converter
+              says the board is non-directional.</em></span>
+          </label>
+          <div class="field">
+            <label for="price" id="lab-price">Board price per m² <span class="muted-note inline">(your currency)</span></label>
+            <input id="price" type="number" step="any" min="0" placeholder="leave blank to skip cost">
+          </div>
+          <div class="field">
+            <label for="freight">Freight per load <span class="muted-note inline">(optional)</span></label>
+            <input id="freight" type="number" step="any" min="0" placeholder="what one load costs to ship">
+            <p class="note tight">Your figure, not a quoted rate. Divided by the boxes that fit
+              the load in the <b>Pack</b> view, it gives the cost of a box delivered.</p>
+          </div>
+          <div class="field">
+            <label for="qty">Order quantity <span class="muted-note inline">(optional)</span></label>
+            <input id="qty" type="number" step="1" min="0" placeholder="e.g. 500">
+          </div>
+          <div id="yieldOut" class="yield"></div>
+        </div>
+      </section>
+
+      <section class="panel" id="licencePanel">
+        <div class="pad">
+          <h2>Licence</h2>
+          <div id="licenceBody"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ------------------------------------------------ stage -->
+    <div class="col-stage">
+      <section class="stage" id="stage" tabindex="-1">
+        <div class="bar">
+          <span class="name" id="styleName">—</span>
+          <span class="code" id="styleCode" hidden></span>
+          <div class="seg" role="group" aria-label="View">
+            <button type="button" id="viewFlat" aria-pressed="true">Dieline</button>
+            <button type="button" id="view3d" aria-pressed="false">3D fold</button>
+            <button type="button" id="viewSheet" aria-pressed="false">Sheet</button>
+            <button type="button" id="viewCompare" aria-pressed="false">Compare</button>
+            <button type="button" id="viewPack" aria-pressed="false">Pack</button>
+          </div>
+          <div class="legend" id="legend">
+            <span class="l-cut"><i></i>Cut</span>
+            <span class="l-crease"><i></i>Crease</span>
+            <span class="l-glue"><i></i>Glue</span>
+            <span class="l-grid" id="gridKey" hidden><i></i><span>10 mm grid</span></span>
+          </div>
+        </div>
+        <div class="starter" id="starter" hidden>
+          <!-- No "on the left": the dimensions panel is beside the drawing on a
+               desktop and below it on a phone, and one string has to be true of
+               both. The button carries the direction instead. -->
+          <span class="starter-txt">You are looking at an example — a shipping case at
+            <b id="starterSize">200 × 150 × 100 mm</b>. Change the dimensions to make it
+            yours, or start from what you are packing.</span>
+          <button type="button" class="ghost sm" id="starterFit">Size it from my product</button>
+          <button type="button" class="iconbtn" id="starterX" aria-label="Dismiss this note">&times;</button>
+        </div>
+        <div class="anno-bar" id="annoBar">
+          <span class="anno-label">Show</span>
+          <button type="button" class="chip" data-anno="dims" aria-pressed="true">Dimensions</button>
+          <button type="button" class="chip" data-anno="labels" aria-pressed="true">Panel names</button>
+          <button type="button" class="chip" data-anno="chain" aria-pressed="false">Panel sizes</button>
+          <button type="button" class="chip" data-anno="guides" aria-pressed="false">Artwork guides</button>
+          <span class="grow"></span>
+          <div class="zoomer">
+            <button type="button" class="iconbtn" id="zoomOut" aria-label="Zoom out">&minus;</button>
+            <button type="button" class="iconbtn" id="zoomFit" aria-label="Fit to view" title="Fit">Fit</button>
+            <button type="button" class="iconbtn" id="zoomIn" aria-label="Zoom in">+</button>
+          </div>
+        </div>
+        <div class="pack-bar" id="packBar" hidden>
+          <div class="field">
+            <label for="packSel">Pack into</label>
+            <select id="packSel"></select>
+          </div>
+          <div class="field">
+            <label for="packH" id="lab-packH">Load height (mm)</label>
+            <input id="packH" type="text" inputmode="decimal" autocomplete="off" value="1400">
+          </div>
+          <div class="field">
+            <label for="packGap" id="lab-packGap">Clearance (mm)</label>
+            <input id="packGap" type="text" inputmode="decimal" autocomplete="off" value="0">
+          </div>
+          <div class="field" id="packCustom" hidden>
+            <label for="packW" id="lab-packW">Width (mm)</label>
+            <input id="packW" type="text" inputmode="decimal" autocomplete="off" value="600">
+          </div>
+          <div class="field" id="packCustomD" hidden>
+            <label for="packD" id="lab-packD">Depth (mm)</label>
+            <input id="packD" type="text" inputmode="decimal" autocomplete="off" value="400">
+          </div>
+        </div>
+        <div class="viewport" id="viewport" role="img" aria-label="Dieline preview"></div>
+        <div class="fold-bar" id="foldBar" hidden>
+          <button type="button" class="iconbtn" id="foldPlay" aria-label="Replay the fold">
+            <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 2l10 6-10 6z" fill="currentColor"/></svg>
+          </button>
+          <label for="foldRange" class="sr">Fold amount</label>
+          <input type="range" id="foldRange" min="0" max="100" value="100" step="1">
+          <span class="hint" id="foldHint">Drag the box to rotate</span>
+        </div>
+        <dl class="readout" id="readout" aria-live="polite"></dl>
+        <!-- The parts schedule. Every row points at the drawing and back. -->
+        <section class="parts" id="parts" hidden>
+          <div class="parts-head">
+            <h3 id="partsTitle">Parts</h3>
+            <p class="parts-hint" id="partsHint">Point at a part to find it on the drawing.</p>
+          </div>
+          <ul class="parts-list" id="partsList" aria-labelledby="partsTitle"></ul>
+        </section>
+        <div class="sheet-note" id="sheetNote" hidden></div>
+        <div class="notes" id="notes"></div>
+        <details class="assembly" id="assembly">
+          <summary>How it assembles</summary>
+          <ol id="assemblySteps"></ol>
+        </details>
+        <div class="exports">
+          <button class="ghost" id="dlSvg">Download SVG</button>
+          <button class="ghost" id="dlPdf">Download PDF <span class="qualifier">(true scale)</span></button>
+          <button class="ghost" id="dlDxf">Download DXF</button>
+          <button class="ghost" id="dlSpec" title="A one-page A4 summary to send to your printer. No pricing on it.">Spec sheet</button>
+          <button class="ghost" id="btnTile" title="Split the dieline across sheets your own printer can make, at 1:1">Print at home…</button>
+          <button class="ghost" id="btnShare" title="Copy a link that reopens this exact box">Copy link</button>
+          <span class="grow"></span>
+          <span id="exportNote"></span>
+        </div>
+      </section>
+
+      <!-- ------------------------------------------------ content -->
+      <section class="prose" id="catalogue">
+        <h2>What this makes</h2>
+        <p>A dieline is the flat cutting template a box is made from — the outline the
+        knife follows and the lines the board is creased along. Cartonry computes one for
+        the internal size you type, with the board thickness already allowed for, and hands
+        you a file you can put artwork onto or send to a die maker.</p>
+        <p>Every panel is derived from the dimensions you enter. Panels across the blank are
+        set to the internal dimension plus one board caliper, because folding a sheet through
+        ninety degrees consumes one thickness of inner face at each corner. Get that wrong and
+        the box is a few millimetres too tight to close.</p>
+
+        <h3>Box styles</h3>
+        <!-- CATALOGUE:START (generated by tools/build-pages.js - do not edit by hand) -->
+    <ul class="related">
+      <li><a href="box/rsc-0201.html">Regular Slotted Container (RSC)</a> <span class="code">0201</span> <span class="lock free">Free</span>
+        <span>The standard shipping box. All flaps the same depth; outer flaps meet at the centre.</span></li>
+      <li><a href="box/hsc.html">Half Slotted Container (open top)</a>
+        <span>An RSC with no top flaps - an open tray for a separate lid to telescope over.</span></li>
+      <li><a href="box/fol-0203.html">Full Overlap Slotted Container (FOL)</a> <span class="code">0203</span>
+        <span>Flaps run the full panel width and fully overlap - a stronger, stiffer base for heavy goods.</span></li>
+      <li><a href="box/mailer-tucktop.html">Tuck-top mailer box</a>
+        <span>The e-commerce mailer: hinged lid at the back, tuck flap at the front, four-corner walls.</span></li>
+      <li><a href="box/tray-4corner.html">Four-corner tray</a>
+        <span>Open tray with glued or tucked corner tabs - inserts, produce trays, box bases.</span></li>
+      <li><a href="box/telescope-lid.html">Telescope lid</a>
+        <span>A lid sized to slide over a box you already have. Enter the box it must cover, not the lid.</span></li>
+      <li><a href="box/carton-ste.html">Straight Tuck End carton (STE)</a>
+        <span>Retail folding carton. Both tucks hinge from the back panel for a clean front face.</span></li>
+      <li><a href="box/carton-rte.html">Reverse Tuck End carton (RTE)</a>
+        <span>Retail folding carton. Tucks hinge from opposite panels, nesting tighter on the sheet.</span></li>
+      <li><a href="box/sleeve.html">Sleeve / belly band</a> <span class="lock free">Free</span>
+        <span>An open-ended band that slides over a tray or product. The simplest print-and-glue format.</span></li>
+      <li><a href="box/hexagon.html">Hexagonal box</a>
+        <span>Six-sided box for candles, gifts and cosmetics. Length is measured across the flats.</span></li>
+      <li><a href="box/pillow.html">Pillow box</a>
+        <span>Curved-end pillow pack for gifts, jewellery and small retail. No end flaps - the arcs close it.</span></li>
+    </ul>
+    <p class="note wide-gap">Each style has a reference page covering when to use it, how it is put together, and what people get wrong.</p>
+    <!-- CATALOGUE:END -->
+      </section>
+
+      <section class="prose" id="pricing">
+        <h2>Pricing</h2>
+        <div id="pricingBody"></div>
+      </section>
+
+      <section class="prose" id="help">
+        <h2>Help</h2>
+        <h3>Which dimensions do I enter?</h3>
+        <p>Always the <strong>internal</strong> size — the space your product needs. Cartonry
+        adds the board allowances on top. If you enter the outside size, the box will be
+        smaller inside than you expect.</p>
+        <h3>What are the coloured lines?</h3>
+        <p>Magenta solid is the cut. Blue dashed is a crease (fold). Green dashed marks the
+        glue area. They come through as separate named layers in SVG and DXF so your printer
+        or die maker can separate them.</p>
+        <h3>Which file should I send?</h3>
+        <p><strong>PDF</strong> for a printer or for placing artwork — it is written at true
+        scale, so one millimetre in the file is one millimetre on paper.
+        <strong>DXF</strong> for a die maker or a cutting table (R12, millimetres, layered).
+        <strong>SVG</strong> to open in Illustrator, Affinity, Inkscape or CorelDRAW.
+        <strong>Spec sheet</strong> is a one-page A4 summary — the drawing plus every number a
+        converter will ask for — meant to be attached to the email rather than measured. It
+        carries no pricing: what your board costs is your business, not your supplier's, so it
+        stays on screen.</p>
+
+        <h3>What is the 3D fold for?</h3>
+        <p>It folds the flat blank in front of you so you can see the box before you commit to
+        anything. It is not a picture: every panel is the same geometry the dieline is cut from,
+        and our tests fold the net and measure the assembled box against the dimensions you
+        typed. The pillow box has no 3D view because it closes by bending rather than folding,
+        and an approximation would look convincing and be wrong.</p>
+
+        <h3>Can I work in inches?</h3>
+        <p>Yes — press the <strong>in</strong> toggle, or <strong>U</strong>. Everything you
+        measure follows: the box, the blank, the panel sizes, the sheet, the gutter and trim, the
+        written notes, the print dialog and the spec sheet. Board area switches with it, square
+        metres becoming square feet, and if you have entered a board price it is converted so the
+        cost per box stays the same money. You can type fractions the way you would say them —
+        <code>12 1/2</code> and <code>12-1/2</code> both work.</p>
+        <p><strong>Board caliper and slot width stay in millimetres</strong> in both modes. That
+        is deliberate, not an oversight: board is specified in millimetres or microns by every
+        mill and converter, in the United States as much as anywhere, and 0.0138&nbsp;in is not a
+        figure your supplier would recognise. Grammage stays g/m² for the same reason.</p>
+
+        <h3>My box is bigger than my printer</h3>
+        <p>Almost every box is. A 200 × 150 × 100 mm shipping case unfolds to a blank
+        747 mm across — larger than A2. Press <strong>Print at home</strong> and the dieline
+        is split across sheets of your own paper at exactly 1:1, with a trim line on each
+        sheet and a sheet map to lay them out by. Cut along the long grey dashes, butt the
+        cut edges together and tape the back. Every sheet carries a printed 100 mm bar:
+        measure it before you cut, because a print dialog left on “fit to page” will shrink
+        the whole thing by a few per cent and nothing will fit.</p>
+
+        <h3>Can I send someone this exact box?</h3>
+        <p>Yes — press <strong>Copy link</strong>. The whole specification lives in the address,
+        so the link reopens the same style at the same dimensions on the same board. Press
+        <strong>?</strong> for the other keyboard shortcuts.</p>
+        <h3>Does my design leave my computer?</h3>
+        <p>No. Every dieline is computed in your browser and the files are generated there
+        too. Nothing you type is uploaded, because there is no server to upload it to. The
+        only network request this site can make is a licence check, which sends your licence
+        key and nothing else. Once loaded, the tool keeps working with no connection at all.</p>
+        <h3>Check before you commit to a die</h3>
+        <p>Cartonry is a drafting tool, not a substitute for your converter's approval.
+        Print the PDF at 100%, fold it, and check it against the product before you order
+        tooling. Converters vary in the allowances they prefer, and the advanced panel lets
+        you match theirs.</p>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div class="brand-col">
+        <strong class="foot-brand">Cartonry</strong>
+        <p class="note tight">Dielines computed in your browser. No account, no upload, no tracking.</p>
+      </div>
+      <div><a href="privacy.html">Privacy</a></div>
+      <div><a href="terms.html">Terms &amp; refunds</a></div>
+      <div><a href="#help">Help</a></div>
+      <div id="footContact"></div>
+    </div>
+    <p class="foot-note">
+      Fibreboard case codes such as 0201 are the international industry designations used to
+      identify box styles. Cartonry is independent and is not affiliated with, endorsed by, or
+      derived from the publications of FEFCO or any standards body.
+    </p>
+    <p class="labs-credit">An independent product by <a href="https://johnjayasankar.com">John Jayasankar</a>,
+      part of <a href="https://labs.johnjayasankar.com">Labs</a>.</p>
+  </div>
+</footer>
+
+<div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+<dialog class="sheet wide" id="tileDlg" aria-labelledby="tileTitle">
+  <div class="dh">
+    <h2 id="tileTitle">Print at home</h2>
+    <span class="grow"></span>
+    <button type="button" class="iconbtn" id="tileClose" aria-label="Close">&times;</button>
+  </div>
+  <div class="db">
+    <p class="muted-note" id="tileLede"></p>
+    <div class="tile-grid">
+      <div class="tile-prev" id="tilePrev"></div>
+      <div class="tile-side">
+        <div class="field">
+          <label for="paperSel">Your paper</label>
+          <select id="paperSel"></select>
+        </div>
+        <dl class="tile-facts" id="tileFacts"></dl>
+        <button class="primary" id="tileGo">Download the tiled PDF</button>
+        <p class="muted-note">Print at <strong>100%</strong> —
+          turn off “fit to page”. Every sheet carries a 100&nbsp;mm bar so you can
+          check the printer did as it was told before you cut anything.</p>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="sheet" id="keysDlg" aria-labelledby="keysTitle">
+  <div class="dh"><h2 id="keysTitle">Keyboard shortcuts</h2></div>
+  <div class="db">
+    <dl>
+      <dt>F</dt><dd>Switch between the dieline and the 3D fold</dd>
+      <dt>H</dt><dd>Show the sheet layout</dd>
+      <dt>C</dt><dd>Compare every style at this size</dd>
+      <dt>K</dt><dd>Pack — how many fit in a case or on a pallet</dd>
+      <dt>R</dt><dd>Replay the fold animation</dd>
+      <dt>D</dt><dd>Dimensions on or off</dd>
+      <dt>N</dt><dd>Panel names on or off</dd>
+      <dt>P</dt><dd>Panel sizes (dimension chain) on or off</dd>
+      <dt>G</dt><dd>Artwork guides on or off</dd>
+      <dt>U</dt><dd>Swap millimetres and inches (board caliper stays metric)</dd>
+      <dt>+ &nbsp;&minus;</dt><dd>Zoom the dieline in and out</dd>
+      <dt>0</dt><dd>Fit the dieline to the view</dd>
+      <dt>[ &nbsp;]</dt><dd>Previous or next box style</dd>
+      <dt>T</dt><dd>Print at home — tile the dieline onto your paper</dd>
+      <dt>S</dt><dd>Copy a link to this exact box</dd>
+      <dt>?</dt><dd>This list</dd>
+    </dl>
+    <p class="note wide-gap">
+      Shortcuts are ignored while you are typing in a field. Press Escape to close.</p>
+  </div>
+</dialog>
+
+<script type="module" src="app.js?v=76"></script>
+</body>
+</html>

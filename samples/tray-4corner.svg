@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="340.082mm" height="284.356mm"
+     viewBox="0 0 340.082 284.356" data-generator="Cartonry">
+  <title>Four-corner tray - 200 x 150 x 45 mm internal</title>
+  <g transform="translate(10 274.356) scale(1 -1)">
+  <g id="Cut" data-layer="cut" stroke="#E6007E" stroke-width="0.25" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M71.232 19.756 L26.982 19.756 L26.982 64.006 L71.232 64.006 L71.232 65.506 L25.482 65.506 L25.482 217.006 L71.232 217.006 L71.232 218.506 L26.982 218.506 L26.982 262.756 L71.232 262.756 L272.732 262.756 L316.982 262.756 L316.982 218.506 L272.732 218.506 L272.732 217.006 L318.482 217.006 L318.482 65.506 L272.732 65.506 L272.732 64.006 L316.982 64.006 L316.982 19.756 L272.732 19.756 Z"/>
+  </g>
+  <g id="Crease---fold" data-layer="crease" stroke="#0090D4" stroke-width="0.25" stroke-dasharray="3 2" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M71.232 65.506 L272.732 65.506"/>
+    <path d="M71.232 217.006 L272.732 217.006"/>
+    <path d="M71.232 65.506 L71.232 217.006"/>
+    <path d="M272.732 65.506 L272.732 217.006"/>
+    <path d="M71.232 19.756 L71.232 64.006"/>
+    <path d="M272.732 19.756 L272.732 64.006"/>
+    <path d="M71.232 218.506 L71.232 262.756"/>
+    <path d="M272.732 218.506 L272.732 262.756"/>
+  </g>
+  <g id="Dimensions" data-layer="dim" stroke="#8A94A0" stroke-width="0.25" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M25.482 17.756 L25.482 0"/>
+    <path d="M318.482 17.756 L318.482 0"/>
+    <path d="M25.482 1.6 L318.482 1.6"/>
+    <path d="M23.882 0 L27.082 3.2"/>
+    <path d="M316.882 0 L320.082 3.2"/>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="9.15625" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(171.982 5.72) scale(1 -1) rotate(0)">293 mm</text>
+    <path d="M23.482 19.756 L5.726 19.756"/>
+    <path d="M23.482 262.756 L5.726 262.756"/>
+    <path d="M7.326 19.756 L7.326 262.756"/>
+    <path d="M5.726 18.156 L8.926 21.356"/>
+    <path d="M5.726 261.156 L8.926 264.356"/>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="9.15625" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(3.205 141.256) scale(1 -1) rotate(-90)">243 mm</text>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="7.7828124999999995" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(171.982 138.051) scale(1 -1) rotate(0)">Base</text>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="7.7828124999999995" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(48.357 138.051) scale(1 -1) rotate(0)">Side</text>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="7.7828124999999995" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(295.607 138.051) scale(1 -1) rotate(0)">Side</text>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="7.7828124999999995" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(171.982 39.426) scale(1 -1) rotate(0)">Front</text>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="7.7828124999999995" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(171.982 236.676) scale(1 -1) rotate(0)">Back</text>
+  </g>
+  </g>
+</svg>

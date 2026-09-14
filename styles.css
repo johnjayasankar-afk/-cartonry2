@@ -1,0 +1,984 @@
+/* Type: the Labs family faces, served from this site. The CSP's default-src
+   'self' already covers same-origin fonts, and sw.js pre-caches the files, so
+   the tool looks the same offline. Plex Mono is here in 400 and 500 only, so
+   monospaced text asks for no more than 500 - past that the browser fakes a
+   bold. The one exception is the best value in a comparison column, where a
+   heavier figure is the point. */
+@font-face{font-family:"Inter";src:url("fonts/inter-var.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";src:url("fonts/ibm-plex-mono-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";src:url("fonts/ibm-plex-mono-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+:root{
+  --bg:#f8f6f1; --panel:#fff; --ink:#0f1712; --muted:#535d57; --line:#e3e1d9;
+  --accent:#0d6e8c; --accent-ink:#fff; --cut:#e6007e; --crease:#0090d4;
+  --glue:#00a45a; --warn:#8a4a0b; --warn-bg:#fbf0dc;
+  /* --glue is a print-layer colour and stays as it is: it identifies the glue
+     area on a drawing, where it is a line rather than something to read. As
+     TEXT on the panel it is 3.06:1, which fails AA for the 11px "Free" badge,
+     so lettering gets its own darker green. */
+  --glue-ink:#0a6b3d;
+  /* The Labs family layer. Porcelain ground with a dot grid, forest ink, and
+     one rule for colour on controls: what commits or switches - the primary
+     button, the pressed segment, a layer that is switched on - is forest here
+     and mint in the dark, as on every Labs product. Teal stays Cartonry's own
+     accent: links, the selected style, focus, and the pack and tile drawings.
+     --sunk is the track a segmented control sits in. */
+  --action:#1c3326; --action-ink:#f0f7f3; --action-hover:#2b4c39;
+  --sunk:#f1eee6; --dot:rgba(28,51,38,.06);
+  /* Errors and confirmations as tokens, so dark mode stays one block. */
+  --bad:#9a2f21; --bad-bg:#fbe9e5; --bad-line:#efc3b9;
+  --good:#1f6b4a; --good-bg:#e7f2eb; --good-line:#bfd9c8;
+  /* The preview graticule: drawn inside the SVG, so it must be a colour the
+     page supplies rather than one the exporter hardcodes. */
+  --grid-fine:rgba(83,93,87,.20); --grid-bold:rgba(83,93,87,.34);
+  --paper:#fdfcf9;
+  /* Type scale. Nine deliberate steps. Before this there were twenty-three
+     declared sizes resolving to twenty distinct pixel values - 13.44, 13.6 and
+     13.76 all appeared, which no reader can tell apart and no designer chose. */
+  --fs-2xs:.68rem; --fs-xs:.75rem;  --fs-sm:.8rem;   --fs-md:.85rem;
+  --fs-lg:.9375rem; --fs-xl:1.05rem; --fs-2xl:1.15rem; --fs-3xl:1.5rem;
+  --fs-4xl:1.85rem;
+  /* Corner radii: four steps and a pill. The family's softer corners: a badge
+     is 6px, a field 10px, a card 14px, a dialog 18px, and anything you press
+     or toggle is a pill. */
+  --r-xs:6px; --r-sm:10px; --r-md:14px; --r-lg:18px; --r-pill:999px;
+  /* Control heights. Three sizes, set explicitly rather than left to fall out
+     of padding plus whatever line box the control happens to have: a select
+     and a text input with identical padding came out 37.5px and 41.3px, and
+     they sit next to each other in the same form. */
+  --h-control:38px;   /* inputs, selects, buttons - anything you type in or press */
+  --h-small:30px;     /* the header links and the theme button */
+  --h-chip:26px;      /* chips, icon buttons, and the segments inside a segmented control */
+  --h-badge:20px;     /* inline badges: Free / Licence / a case code */
+
+  /* The inspector. Colour on the drawing means LAYER - magenta cuts, blue
+     creases, green glues - so a selection must not introduce a sixth hue that
+     competes for that meaning. It is a change of tone instead: a wash of ink
+     over the part, the way tracing paper falls on the sheet. */
+  --wash:rgba(15,23,18,.085); --wash-line:rgba(15,23,18,.50);
+  --wash-pin:rgba(15,23,18,.13);
+
+  --shadow:0 1px 2px rgba(28,51,38,.05),0 8px 24px -14px rgba(28,51,38,.20);
+  --shadow-lg:0 1px 2px rgba(15,23,18,.08),0 28px 60px -24px rgba(10,20,15,.45);
+  --sans:"Inter",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+}
+/* Dark tokens live in one place and are applied twice: once for the system
+   preference (unless the reader has explicitly chosen light) and once for an
+   explicit dark choice, so the toggle wins in both directions. */
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){
+  --bg:#0c1410; --panel:#131e18; --ink:#e8f0ea; --muted:#9fb0a5; --line:#243429;
+  --accent:#5cc3df; --accent-ink:#04161c; --warn:#e8b070; --warn-bg:#2a2114;
+  --glue-ink:#4ad991;
+  /* Forest night, the family's dark ground, with mint for what commits. */
+  --action:#a7f3d0; --action-ink:#0c1f15; --action-hover:#c2f8de;
+  --sunk:#0f1813; --dot:rgba(232,240,234,.045);
+  --bad:#f0a0a0; --bad-bg:#2a1616; --bad-line:#5a2a2a;
+  --good:#8fd8ac; --good-bg:#132419; --good-line:#2c5138;
+  --grid-fine:rgba(159,176,165,.16); --grid-bold:rgba(159,176,165,.28);
+  --paper:#0f1813;
+  /* Ink is light here, so the wash is a veil of light rather than of shadow -
+     the same idea, the other way up. */
+  --wash:rgba(232,240,234,.10); --wash-line:rgba(232,240,234,.55);
+  --wash-pin:rgba(232,240,234,.16);
+  --shadow:0 1px 2px rgba(0,0,0,.35),0 8px 24px -14px rgba(0,0,0,.6);
+  --shadow-lg:0 1px 2px rgba(0,0,0,.4),0 28px 60px -24px rgba(0,0,0,.8);
+  color-scheme:dark;
+}}
+:root[data-theme=dark]{
+  --bg:#0c1410; --panel:#131e18; --ink:#e8f0ea; --muted:#9fb0a5; --line:#243429;
+  --accent:#5cc3df; --accent-ink:#04161c; --warn:#e8b070; --warn-bg:#2a2114;
+  --glue-ink:#4ad991;
+  /* Forest night, the family's dark ground, with mint for what commits. */
+  --action:#a7f3d0; --action-ink:#0c1f15; --action-hover:#c2f8de;
+  --sunk:#0f1813; --dot:rgba(232,240,234,.045);
+  --bad:#f0a0a0; --bad-bg:#2a1616; --bad-line:#5a2a2a;
+  --good:#8fd8ac; --good-bg:#132419; --good-line:#2c5138;
+  --grid-fine:rgba(159,176,165,.16); --grid-bold:rgba(159,176,165,.28);
+  --paper:#0f1813;
+  /* Ink is light here, so the wash is a veil of light rather than of shadow -
+     the same idea, the other way up. */
+  --wash:rgba(232,240,234,.10); --wash-line:rgba(232,240,234,.55);
+  --wash-pin:rgba(232,240,234,.16);
+  --shadow:0 1px 2px rgba(0,0,0,.35),0 8px 24px -14px rgba(0,0,0,.6);
+  --shadow-lg:0 1px 2px rgba(0,0,0,.4),0 28px 60px -24px rgba(0,0,0,.8);
+  color-scheme:dark;
+}
+:root{color-scheme:light}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background-color:var(--bg);color:var(--ink);
+  background-image:radial-gradient(circle at 1px 1px,var(--dot) 1px,transparent 1.2px);background-size:24px 24px;
+  font:var(--fs-lg)/1.55 var(--sans);letter-spacing:-.006em;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+a{color:var(--accent)}
+h1,h2,h3{line-height:1.2;margin:0 0 .5em;font-weight:600}
+h1{font-size:var(--fs-3xl);letter-spacing:-.025em}
+h2{font-size:var(--fs-2xl);letter-spacing:-.018em}
+h3{font-size:var(--fs-lg);letter-spacing:-.01em}
+/* The shell. 1240px was a reading measure applied to a drawing board: on a
+   1440px screen it left 260px empty and squeezed a 747mm blank into 850px.
+   The drawing is the product, so the shell follows the screen - while the
+   prose inside it stays at 70ch, because that is a reading measure and it was
+   right all along. Capped, or on a very wide display the masthead would drift
+   apart from the work. */
+.wrap{max-width:1480px;margin:0 auto;padding:0 20px}
+
+header.site{border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;
+  background:color-mix(in srgb,var(--bg) 86%,transparent);
+  -webkit-backdrop-filter:saturate(1.3) blur(12px);backdrop-filter:saturate(1.3) blur(12px)}
+header.site .wrap{display:flex;align-items:center;gap:16px;height:58px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.025em;font-size:var(--fs-xl);
+  text-decoration:none;color:var(--ink)}
+.brand svg{display:block}
+header.site nav{margin-left:auto;display:flex;gap:2px;font-size:var(--fs-md);align-items:center}
+/* The hit area is a 30px pill even though the text is not: a link you have to
+   hit within 23 pixels is a link you miss. The pill fills on hover, so the
+   target the pointer finds is the one the eye sees. */
+header.site nav a{color:var(--muted);text-decoration:none;display:inline-flex;align-items:center;
+  min-height:var(--h-small);padding:0 11px;border-radius:var(--r-pill);white-space:nowrap;font-weight:500;
+  transition:background .14s,color .14s}
+header.site nav a:hover{color:var(--ink);background:color-mix(in srgb,var(--ink) 6%,transparent)}
+
+/* The page's two-column shell. Named for the app, not for the concept:
+   a bare .layout rule once captured a <dd class="layout"> in the material
+   panel and gave a footnote a 330px grid track and 40px of padding. */
+.app-layout{display:grid;grid-template-columns:330px 1fr;gap:20px;padding:20px 0 40px;align-items:start}
+/* Grid and flex tracks default to min-width:auto, so one wide child (a long
+   style name, a scrolling row of recents, a metre-wide dieline) drags the whole
+   column past the viewport. Opting every track out of that is the fix. */
+.app-layout>*{min-width:0}
+.viewport,.viewport .pan{min-width:0;max-width:100%}
+
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--shadow)}
+.panel>.pad{padding:16px}
+.panel h2{font:500 var(--fs-xs)/1.25 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 12px}
+
+label{display:block;font-size:var(--fs-sm);color:var(--muted);margin:0 0 4px}
+/* min-width:0 so a long option cannot widen the select past its column, and
+   text-overflow so what does not fit is trimmed rather than pushed out. */
+select{min-width:0;text-overflow:ellipsis}
+select,input[type=text],input[type=number]{width:100%;height:var(--h-control);padding:0 10px;
+  border:1px solid var(--line);
+  border-radius:var(--r-sm);background:var(--bg);color:var(--ink);font:inherit;font-size:var(--fs-lg)}
+select:focus,input:focus{outline:2px solid var(--accent);outline-offset:-1px;border-color:transparent}
+.field{margin-bottom:12px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.grid3.two{grid-template-columns:1fr 1fr}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.row{display:flex;gap:8px;align-items:center}
+/* A segmented control is a track with a pill that moves: the pressed segment is
+   filled, the rest sit in the track. */
+.unit-toggle{display:inline-flex;gap:2px;padding:2px;border:1px solid var(--line);border-radius:var(--r-pill);
+  background:var(--sunk);overflow:hidden}
+.unit-toggle button{border:0;background:transparent;color:var(--muted);height:var(--h-chip);
+  padding:0 12px;border-radius:var(--r-pill);font:inherit;font-size:var(--fs-sm);cursor:pointer}
+.unit-toggle button[aria-pressed=true]{background:var(--action);color:var(--action-ink);font-weight:600}
+
+details.adv{border-top:1px solid var(--line);margin-top:14px;padding-top:12px}
+details.adv summary{cursor:pointer;font-size:var(--fs-md);color:var(--muted);list-style:none;
+  display:flex;align-items:center;min-height:var(--h-chip)}
+details.adv summary::-webkit-details-marker{display:none}
+details.adv summary::before{content:"▸ ";display:inline-block;transition:transform .15s}
+details.adv[open] summary::before{content:"▾ "}
+details.adv .pad2{padding-top:12px}
+
+button.primary{background:var(--action);color:var(--action-ink);border:0;border-radius:var(--r-pill);
+  height:var(--h-control);padding:0 18px;font:inherit;font-weight:600;font-size:var(--fs-lg);
+  cursor:pointer;width:100%}
+button.primary:hover{background:var(--action-hover)}
+button.primary:disabled{opacity:.5;cursor:not-allowed}
+button.ghost{background:var(--panel);color:var(--ink);border:1px solid var(--line);
+  border-radius:var(--r-pill);height:var(--h-control);padding:0 14px;font:inherit;
+  font-size:var(--fs-md);font-weight:500;cursor:pointer;white-space:nowrap}
+button.ghost:hover{border-color:var(--muted)}
+
+.stage{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-md);
+  box-shadow:var(--shadow);overflow:hidden}
+.stage .bar{display:flex;align-items:center;gap:14px;padding:10px 16px;border-bottom:1px solid var(--line);
+  flex-wrap:wrap}
+.stage .bar .name{font-weight:600;font-size:var(--fs-lg);letter-spacing:-.015em}
+.stage .bar .code{font:500 var(--fs-xs)/1 var(--mono);color:var(--muted);border:1px solid var(--line);
+  display:inline-flex;align-items:center;height:var(--h-badge);padding:0 8px;
+  border-radius:var(--r-pill)}
+.legend{margin-left:auto;display:flex;gap:14px;font-size:var(--fs-xs);color:var(--muted);flex-wrap:wrap}
+.legend i{display:inline-block;width:16px;height:0;border-top-width:2px;margin-right:5px;vertical-align:middle}
+.legend .l-cut i{border-top:2px solid var(--cut)}
+.legend .l-crease i{border-top:2px dashed var(--crease)}
+.legend .l-glue i{border-top:2px dashed var(--glue)}
+.viewport{padding:18px;display:flex;justify-content:center;align-items:center;min-height:300px;
+  background:var(--paper)}
+.viewport svg{max-width:100%;height:auto;max-height:60vh}
+
+/* The title block.
+ *
+ * Every technical drawing carries one: a ruled strip along the foot naming the
+ * part, the material and the sizes. This row holds exactly that information,
+ * and it used to be set as four rounded stat cards - the most template-like
+ * component on a page whose whole subject is drawings. Ruled cells, a caption
+ * register for the labels and a mono face for the figures say what it is.
+ *
+ * The rules are real 1px borders rather than a background showing through
+ * gaps, so a cell that wraps to two lines cannot break the grid. */
+/* 180px, because "200 x 150 x 100 mm" needs 185 to stay on one line. Below
+   that the grid drops a column rather than letting the figures wrap. */
+/* Measured, not guessed: the widest value these cells carry is an imperial
+   outside size - "8.11 x 6.14 x 4.17" - which needs 169px of monospace plus
+   33px of padding and rule. 180px wrapped it onto two lines; 160px wrapped it
+   worse. Below the width where four fit, two-by-two beats three-and-an-orphan. */
+.readout{display:grid;grid-template-columns:repeat(auto-fit,minmax(202px,1fr));
+  border-top:1px solid var(--line);background:var(--panel)}
+.readout div{padding:9px 16px 10px;border-left:1px solid var(--line);min-width:0}
+.readout div:first-child{border-left:0}
+.readout dt{font:500 var(--fs-2xs)/1.55 var(--mono);color:var(--muted);text-transform:uppercase;
+  letter-spacing:.08em;margin:0}
+.cell-why{display:block;margin-top:3px;font-size:var(--fs-2xs);color:var(--muted);
+  line-height:1.4;max-width:26ch}
+.readout dd{margin:3px 0 0;font:500 var(--fs-lg)/1.25 var(--mono);letter-spacing:-.01em;
+  font-variant-numeric:tabular-nums;
+  /* Wraps rather than truncates. "200 x 150 x 100 mm" does not fit a 135px
+     cell on a phone, and an ellipsis there hides the one number the reader
+     came for. Two lines is not a defect; a hidden dimension is. */
+  overflow-wrap:anywhere}
+/* Below the wrap point the cells stack, so a left rule would be a stray mark. */
+@media (max-width:520px){
+  .readout div{border-left:0;border-top:1px solid var(--line)}
+  .readout div:first-child{border-top:0}
+}
+/* ------------------------------------------------------- responsive
+ * These blocks live at the END of the sheet, after every rule they override.
+ * They used to sit near the top, where a later base rule simply won on source
+ * order: the stage bar's tighter gap, the readout's tighter padding and the
+ * legend's alignment were written for small screens and had never once
+ * applied. Media queries carry no extra specificity - only position.
+ * ---------------------------------------------------------------- */
+/* The band where the stage is too narrow for four cells but too wide for the
+   stacked layout: pair them rather than orphaning the fourth. */
+@media (min-width:901px) and (max-width:1190px){
+  .readout{grid-template-columns:repeat(2,1fr)}
+  .readout div:nth-child(3){border-left:0}
+}
+@media (max-width:900px){
+  .app-layout{grid-template-columns:1fr}
+  .stage .bar{gap:10px}
+  .legend{width:100%;margin-left:0;order:3}
+  /* Put the dieline first on a phone: it is what the page is for. The style
+     list is long, so cap it and let it scroll rather than burying the preview. */
+  .app-layout>.col-stage{order:-1}
+  .styles{max-height:216px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .viewport{min-height:200px;padding:12px}
+  .viewport svg{max-height:34vh}
+  .readout div{padding:9px 12px}
+}
+
+/* A 747 x 253 mm blank is 114px tall once it fits a phone's width, and a fixed
+   300px stage left 186px of nothing under it. The stage keeps a floor so it
+   cannot collapse between styles, but a much lower one where the screen is
+   the scarce thing. */
+@media (max-width:640px){
+  /* Five view buttons are 327px of labels and the stage is 333px wide, so the
+     bar overflowed on every view the moment "Pack" was added. The segment
+     takes its own full-width row and the buttons share it equally, which reads
+     as a deliberate control rather than a row that ran out of room. */
+  .stage .bar{flex-wrap:wrap}
+  .stage .bar .seg{order:2;width:100%;display:flex;gap:0}
+  .stage .bar .seg button{flex:1 1 0;min-width:0;padding:0 4px;
+    font-size:var(--fs-2xs);letter-spacing:-.01em}
+  .viewport{min-height:172px;padding:12px}
+  .viewport svg{max-height:44vh}
+  /* A lower floor here on purpose: at 180px a 375px screen gets one column and
+     four tall cells. Wrapping is safe now that nothing truncates, so two
+     columns and the occasional second line is the better use of a phone. */
+  /* One per row on a phone. Two columns of 150px broke "200 x 150 x 100 mm"
+     across two lines, which splits a single measurement in half - the one
+     thing a readout must never do. A taller strip is the cheaper price. */
+  .readout{grid-template-columns:1fr}
+}
+
+.notes{border-top:1px solid var(--line);padding:14px 16px;font-size:var(--fs-md);color:var(--muted)}
+.notes ul{margin:0;padding-left:18px}.notes li{margin:3px 0}
+
+.exports{border-top:1px solid var(--line);padding:14px 16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.exports .grow{flex:1 1 auto;min-width:1px}
+
+.msg{border-radius:var(--r-sm);padding:9px 12px;font-size:var(--fs-md);margin:0 0 12px}
+.msg.err{background:var(--bad-bg);color:var(--bad);border:1px solid var(--bad-line)}
+.msg.warn{background:var(--warn-bg);color:var(--warn);border:1px solid currentColor}
+.msg.ok{background:var(--good-bg);color:var(--good);border:1px solid var(--good-line)}
+
+/* The picker is capped and scrolls.
+ *
+ * Eleven rows plus five group headings is 641px of sidebar. With the picker
+ * first, the L/W/H inputs began at y=905 - below the fold on every laptop up
+ * to 1000px tall. The primary control of a dimension tool was not on screen
+ * when the page loaded. Dimensions now come first and the list is capped, so
+ * both fit above the fold together and the whole list is still one scroll. */
+.styles{list-style:none;margin:0;padding:0;max-height:332px;overflow-y:auto;
+  scrollbar-width:thin;overscroll-behavior:contain}
+/* A hairline that says there is more below, without a scrollbar having to. */
+.styles-wrap{position:relative;--fade:1}
+.styles-wrap::after{content:"";position:absolute;left:0;right:0;bottom:0;height:26px;
+  pointer-events:none;background:linear-gradient(transparent,var(--panel));
+  opacity:var(--fade,1);transition:opacity .18s}
+.styles li{border-top:1px solid var(--line)}
+.styles li:first-child{border-top:0}
+/* The family heading is the translation for the style codes beneath it: a
+   reader who wants to pack a candle does not know that a candle box is a
+   "tray" until something says so. */
+.styles li.fam-head{border-top:1px solid var(--line);padding:13px 12px 5px;
+  font:500 var(--fs-2xs)/1.55 var(--mono);text-transform:uppercase;letter-spacing:.08em;
+  color:var(--muted)}
+.styles li.fam-head:first-child{border-top:0;padding-top:2px}
+.styles li.fam-head + li{border-top:0}
+.styles button{width:100%;text-align:left;background:none;border:0;padding:7px 12px;cursor:pointer;
+  font:inherit;color:var(--ink);display:flex;gap:9px;align-items:center}
+.styles .txt{flex:1 1 auto;min-width:0}
+.styles .thumb{flex:0 0 36px;width:36px;height:26px;display:grid;place-items:center;
+  color:var(--muted);opacity:.75;transition:color .14s,opacity .14s}
+.styles .thumb svg{width:100%;height:100%;display:block}
+.styles button:hover .thumb{opacity:1}
+.styles button[aria-current=true] .thumb{color:var(--cut);opacity:1}
+.styles button:hover{background:var(--bg)}
+.styles button[aria-current=true]{background:color-mix(in srgb,var(--accent) 7%,var(--panel));
+  box-shadow:inset 3px 0 0 var(--accent)}
+.styles .nm{flex:1 1 auto;min-width:0;font-size:var(--fs-md);font-weight:550;line-height:1.3}
+.styles .lock{margin-left:0}
+/* The style's own designation, set as a designation. */
+.styles .abbr{flex:0 0 auto;font:500 var(--fs-2xs)/1 var(--mono);color:var(--muted);
+  border:1px solid var(--line);border-radius:var(--r-pill);padding:3px 5px;letter-spacing:.02em}
+.styles button[aria-current=true] .abbr{color:var(--accent);border-color:var(--accent)}
+/* Nine repetitions of the word "Licence" taught nothing after the first. */
+.styles .lock:not(.free){border:0;padding:0;width:16px;justify-content:center;opacity:.55}
+.styles button:hover .lock:not(.free){opacity:.9}
+.lock{font-size:var(--fs-2xs);border:1px solid var(--line);border-radius:var(--r-pill);
+  display:inline-flex;align-items:center;height:var(--h-badge);padding:0 7px;
+  color:var(--muted);margin-left:auto;white-space:nowrap;letter-spacing:.02em}
+.lock.free{color:var(--glue-ink);border-color:currentColor}
+
+.prose{max-width:70ch}
+.prose p{color:var(--muted)}
+footer.site{border-top:1px solid var(--line);margin-top:40px;padding:28px 0 48px;
+  font-size:var(--fs-md);color:var(--muted)}
+footer.site a{color:var(--muted)}
+footer.site .cols{display:flex;gap:28px;flex-wrap:wrap}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ------------------------------------------------------------ view toggle */
+.seg{display:inline-flex;gap:2px;padding:2px;border:1px solid var(--line);border-radius:var(--r-pill);
+  background:var(--sunk);overflow:hidden;flex:0 0 auto}
+.seg button{border:0;background:transparent;color:var(--muted);height:var(--h-chip);padding:0 12px;
+  border-radius:var(--r-pill);font:inherit;font-size:var(--fs-sm);cursor:pointer;
+  transition:background .14s,color .14s}
+.seg button+button{border-left:0}
+.seg button:hover{color:var(--ink)}
+.seg button[aria-pressed=true]{background:var(--action);color:var(--action-ink);font-weight:600}
+.seg button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+
+/* -------------------------------------------------------------- fold bar */
+.fold-bar{display:flex;align-items:center;gap:12px;padding:9px 16px;border-top:1px solid var(--line)}
+.fold-bar .hint{font-size:var(--fs-xs);color:var(--muted);margin-left:auto;white-space:nowrap}
+.iconbtn{display:grid;place-items:center;width:var(--h-chip);height:var(--h-chip);flex:0 0 auto;
+  border:1px solid var(--line);
+  border-radius:var(--r-pill);background:var(--panel);color:var(--muted);cursor:pointer;padding:0}
+.iconbtn:hover{color:var(--ink);border-color:var(--muted)}
+/* The visible track is 3px; the CONTROL is 24px, because a 3px-tall grab area
+   is most of a slider's usability and all of its touch target. The track is
+   drawn on the pseudo-element so the input's own box can stay finger-sized. */
+input[type=range]{flex:1 1 auto;min-width:80px;appearance:none;height:24px;
+  background:transparent;outline:none;cursor:pointer;margin:0}
+input[type=range]::-webkit-slider-runnable-track{height:3px;border-radius:var(--r-xs);
+  background:var(--line)}
+input[type=range]::-moz-range-track{height:3px;border-radius:var(--r-xs);background:var(--line)}
+input[type=range]::-webkit-slider-thumb{appearance:none;width:14px;height:14px;border-radius:50%;
+  background:var(--accent);cursor:grab;border:2px solid var(--panel);box-shadow:0 0 0 1px var(--line);
+  margin-top:-7.5px}
+input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--accent);
+  cursor:grab;border:2px solid var(--panel);box-shadow:0 0 0 1px var(--line)}
+input[type=range]:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ------------------------------------------------------------- 3D stage */
+.viewport.is3d{background:radial-gradient(120% 100% at 50% 0%,
+   rgba(127,127,127,.10), rgba(127,127,127,.02) 60%, transparent 100%);
+  cursor:grab;touch-action:none;user-select:none}
+.viewport.is3d:active{cursor:grabbing}
+.viewport.is3d svg{max-height:none;width:100%;height:100%}
+.viewport.is3d .stage3d{width:100%;height:min(46vh,380px);display:block}
+.na3d{color:var(--muted);font-size:var(--fs-md);text-align:center;max-width:34ch;line-height:1.5}
+
+/* ------------------------------------------------------- annotation bar */
+.anno-bar{display:flex;align-items:center;gap:7px;padding:8px 16px;border-top:1px solid var(--line);
+  flex-wrap:wrap}
+.anno-bar .grow{flex:1 1 auto}
+.anno-label{font:500 var(--fs-2xs)/1.55 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);
+  margin-right:2px}
+.chip{border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:var(--r-pill);
+  display:inline-flex;align-items:center;height:var(--h-chip);padding:0 11px;font:inherit;
+  font-size:var(--fs-xs);cursor:pointer;transition:all .14s}
+.chip:hover{color:var(--ink);border-color:var(--muted)}
+.chip[aria-pressed=true]{background:color-mix(in srgb,var(--action) 9%,var(--panel));
+  border-color:var(--action);color:var(--action);font-weight:600}
+.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.zoomer{display:inline-flex;gap:4px}
+.zoomer .iconbtn{width:26px;height:26px;font-size:var(--fs-sm);font-weight:600;line-height:1}
+.zoomer .iconbtn#zoomFit{width:auto;padding:0 9px;font-size:var(--fs-xs);font-weight:500}
+.viewport{position:relative;overflow:hidden}
+.viewport .pan{transform-origin:center center;will-change:transform}
+.viewport.pannable{cursor:grab}
+.viewport.pannable:active{cursor:grabbing}
+
+/* -------------------------------------------------------- material panel */
+.muted-note{font-size:var(--fs-sm);color:var(--muted);margin:0 0 12px;line-height:1.45}
+.yield{border-top:1px solid var(--line);margin-top:4px;padding-top:12px}
+.yield dl{display:grid;grid-template-columns:1fr auto;gap:6px 10px;margin:0;font-size:var(--fs-md)}
+.yield dt{color:var(--muted)}
+.yield dd{margin:0;font:500 var(--fs-md)/1.4 var(--mono);text-align:right}
+.yield .nest-note{grid-column:1/-1;color:var(--muted);font-size:var(--fs-xs);margin-top:4px;
+  padding-top:8px;border-top:1px dashed var(--line);text-align:left;font-family:inherit;
+  font-weight:400;line-height:1.5}
+.yield .warn-inline{color:var(--warn);font-weight:600}
+
+/* --------------------------------------------------------- guide pages */
+.crumbs{padding:18px 0 4px;font-size:var(--fs-sm);color:var(--muted)}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--accent);text-decoration:underline}
+.crumbs span{margin:0 6px;opacity:.6}
+.guide{max-width:74ch;padding-bottom:40px}
+.guide h1{font-size:var(--fs-4xl);letter-spacing:-.03em;margin:.2em 0 .3em}
+.guide h1 .code{font:500 .48em/1 var(--mono);color:var(--muted);border:1px solid var(--line);
+  padding:4px 8px;border-radius:var(--r-pill);vertical-align:middle;margin-left:6px;letter-spacing:0}
+.guide h2{font-size:var(--fs-xl);letter-spacing:-.015em;margin:1.9em 0 .5em;
+  padding-top:1.1em;border-top:1px solid var(--line)}
+.guide p{color:var(--muted);margin:0 0 1em}
+.guide .lede{font-size:var(--fs-xl);line-height:1.6;color:var(--ink);margin-bottom:1.4em}
+
+.cta-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:0 0 26px;
+  padding:14px 16px;border:1px solid var(--line);border-radius:var(--r-md);
+  background:var(--panel);box-shadow:var(--shadow)}
+.cta{background:var(--action);color:var(--action-ink);text-decoration:none;font-weight:600;
+  font-size:var(--fs-lg);padding:9px 18px;border-radius:var(--r-pill);white-space:nowrap}
+.cta:hover{background:var(--action-hover)}
+.cta-note{font-size:var(--fs-sm);color:var(--muted)}
+
+.previews{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 8px}
+@media (max-width:760px){.previews{grid-template-columns:1fr}}
+.previews figure{margin:0;border:1px solid var(--line);border-radius:var(--r-md);
+  overflow:hidden;background:var(--panel);box-shadow:var(--shadow)}
+.previews .pv{padding:14px;display:flex;align-items:center;justify-content:center;
+  min-height:170px;background:var(--paper)}
+.previews .pv.solid{background:radial-gradient(120% 100% at 50% 0%,rgba(127,127,127,.10),transparent 70%)}
+.previews .pv svg{max-width:100%;max-height:190px;height:auto}
+.previews figcaption{padding:9px 13px;border-top:1px solid var(--line);font-size:var(--fs-sm);
+  color:var(--muted);line-height:1.45}
+
+table.spec{width:100%;border-collapse:collapse;font-size:var(--fs-md);margin:0 0 1em}
+table.spec th,table.spec td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+table.spec th{font-weight:500;color:var(--muted);width:42%}
+table.spec td{font-family:var(--mono);font-size:var(--fs-md)}
+.notes-list{color:var(--muted);font-size:var(--fs-md);padding-left:20px;margin:0 0 1em}
+.notes-list li{margin:.35em 0}
+.related{list-style:none;padding:0;margin:0;display:grid;gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden}
+.related li{background:var(--panel);padding:11px 14px}
+.related a{font-weight:600;font-size:var(--fs-lg);text-decoration:none}
+.related a:hover{text-decoration:underline}
+.related span{display:block;color:var(--muted);font-size:var(--fs-sm);margin-top:2px}
+/* The catalogue's case code and Free badge sit beside the style name. The rule
+   above makes every span a block so the one-line description drops under the
+   name, and it had been stretching both badges across the whole row too. */
+.related .code,.related .lock{display:inline-flex;align-items:center;vertical-align:2px;
+  margin:0 0 0 2px;font-size:var(--fs-2xs)}
+.related .code{height:var(--h-badge);padding:0 7px;border:1px solid var(--line);
+  border-radius:var(--r-pill);font-family:var(--mono);font-weight:500}
+
+/* ---------------------------------------------------------- header extras */
+.hdr-tools{display:flex;align-items:center;gap:8px;margin-left:auto}
+header.site nav{margin-left:0}
+.themebtn{display:grid;place-items:center;width:var(--h-small);height:var(--h-small);
+  border:1px solid var(--line);
+  border-radius:var(--r-pill);background:var(--panel);color:var(--muted);cursor:pointer;padding:0}
+.themebtn:hover{color:var(--ink);border-color:var(--muted)}
+.themebtn svg{display:block}
+
+/* ------------------------------------------------------------- recents */
+/* Wraps rather than scrolls. Four chips are 755px wide and the column is 296,
+   so a scrolling row put three of them off-screen and sliced the fourth
+   mid-word, with no affordance saying there was more. */
+.recents{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin-top:12px;padding-top:11px;
+  border-top:1px solid var(--line);min-width:0}
+.recents:empty{display:none}
+.rc-label{font:500 var(--fs-2xs)/1.7 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);
+  flex:0 0 auto;margin-right:2px}
+.recents .rc{flex:0 1 auto;min-width:0;max-width:100%;border:1px solid var(--line);
+  background:var(--panel);border-radius:var(--r-pill);height:var(--h-chip);
+  padding:0 10px;cursor:pointer;color:var(--muted);display:flex;gap:6px;align-items:center;
+  font:inherit;white-space:nowrap;transition:border-color .14s,color .14s}
+.recents .rc:hover{border-color:var(--accent);color:var(--accent)}
+/* The name gives way first: the size is the part that identifies the entry. */
+.rc-n{font-size:var(--fs-xs);font-weight:600;color:var(--ink);min-width:0;
+  overflow:hidden;text-overflow:ellipsis}
+.rc-d{font:var(--fs-2xs)/1 var(--mono);flex:0 0 auto}
+.recents .rc:hover .rc-n{color:var(--accent)}
+
+/* --------------------------------------------------------------- toasts */
+.toasts{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:60;
+  display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none}
+.toast{background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:var(--r-lg);font-size:var(--fs-md);
+  font-weight:500;box-shadow:var(--shadow-lg);animation:toastin .22s ease}
+.toast.err{background:#9a2f21;color:#fff}
+@keyframes toastin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.toast{animation:none}}
+
+/* -------------------------------------------------------------- dialog */
+dialog.sheet{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--panel);
+  color:var(--ink);padding:0;max-width:420px;width:calc(100% - 32px);box-shadow:var(--shadow-lg)}
+dialog.sheet::backdrop{background:rgba(10,20,15,.5);backdrop-filter:blur(3px)}
+dialog.sheet .dh{display:flex;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line)}
+dialog.sheet .dh h2{margin:0;font-size:var(--fs-lg);text-transform:none;letter-spacing:-.012em;color:var(--ink)}
+dialog.sheet .db{padding:16px 18px}
+dialog.sheet dl{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;margin:0;font-size:var(--fs-md)}
+dialog.sheet dt{font-family:var(--mono);font-size:var(--fs-sm);color:var(--ink);background:var(--bg);
+  border:1px solid var(--line);border-radius:var(--r-xs);padding:2px 7px;justify-self:start}
+dialog.sheet dd{margin:0;color:var(--muted);align-self:center}
+
+/* ------------------------------------------------------------ a11y */
+.skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--accent);
+  color:var(--accent-ink);padding:10px 16px;border-radius:0 0 var(--r-md) 0;font-weight:600;
+  text-decoration:none}
+.skip:focus{left:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:var(--r-xs)}
+.styles button:focus-visible{outline-offset:-2px}
+#stage:focus{outline:none}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;
+  transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* ------------------------------------------------------------ checkbox */
+.check{display:flex;gap:9px;align-items:flex-start;margin:0 0 12px;cursor:pointer;
+  font-size:var(--fs-sm);color:var(--ink);line-height:1.4}
+.check input{margin:1px 0 0;accent-color:var(--accent);width:16px;height:16px;flex:0 0 auto;
+  cursor:pointer}
+.check em{display:block;font-style:normal;color:var(--muted);font-size:var(--fs-xs);margin-top:3px;line-height:1.45}
+
+/* --------------------------------------------------------- sheet stage */
+.viewport.issheet{background:none;padding:14px}
+.viewport.issheet svg{max-height:min(46vh,380px);width:auto;max-width:100%}
+.sheet-note{border-top:1px solid var(--line);padding:9px 16px;font-size:var(--fs-sm);color:var(--muted);
+  display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.sheet-note .grainkey{display:inline-flex;align-items:center;gap:6px}
+.sheet-note .grainkey i{width:14px;height:0;border-top:2px solid #8E77C6;display:inline-block}
+
+/* ------------------------------------------------------ assembly steps */
+details.assembly{border-top:1px solid var(--line)}
+details.assembly summary{cursor:pointer;padding:11px 16px;font-size:var(--fs-md);color:var(--muted);
+  list-style:none;user-select:none}
+details.assembly summary::-webkit-details-marker{display:none}
+details.assembly summary::before{content:"▸";display:inline-block;width:14px;
+  transition:transform .16s;color:var(--accent)}
+details.assembly[open] summary::before{transform:rotate(90deg)}
+details.assembly summary:hover{color:var(--ink)}
+details.assembly ol{margin:0;padding:0 16px 14px 40px;color:var(--muted);font-size:var(--fs-md)}
+details.assembly li{margin:.4em 0;padding-left:2px}
+details.assembly li::marker{color:var(--accent);font-weight:600}
+.guide ol.steps{color:var(--muted);padding-left:22px;margin:0 0 1em}
+.guide ol.steps li{margin:.45em 0}
+.guide ol.steps li::marker{color:var(--accent);font-weight:600}
+
+/* ------------------------------------------------------------- printing */
+@media print{
+  header.site,footer.site,.skip,.toasts,#licencePanel,.exports,.anno-bar,
+  .fold-bar,.seg,.recents,#pricing,#help,.hdr-tools{display:none!important}
+  :root{--bg:#fff;--panel:#fff;--ink:#000;--muted:#444;--line:#bbb;--shadow:none}
+  body{background:#fff}
+  .app-layout{display:block;padding:0}
+  .panel,.stage{border:1px solid #ccc;box-shadow:none;break-inside:avoid}
+  .viewport{min-height:0}
+  .viewport svg{max-height:none}
+  details.assembly{display:block}
+  details.assembly ol{display:block}
+  .guide{max-width:none}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em;color:#666}
+}
+
+/* --------------------------------------------------- motion, kept subtle */
+.viewport>*{animation:vpin .18s ease}
+@keyframes vpin{from{opacity:0}to{opacity:1}}
+.styles button,.chip,.seg button,.rc,.iconbtn{transition:background .14s,color .14s,
+  border-color .14s,opacity .14s}
+.panel,.stage{transition:border-color .18s}
+@media (prefers-reduced-motion:reduce){.viewport>*{animation:none}}
+
+/* ------------------------------------------------------------- warnings */
+.warns{margin:0 0 12px;border:1px solid var(--warn);background:var(--warn-bg);
+  border-radius:var(--r-sm);padding:9px 11px}
+.warns ul{margin:0;padding-left:17px}
+.warns li{font-size:var(--fs-sm);color:var(--warn);line-height:1.45;margin:.3em 0}
+.warns .hd{font:500 var(--fs-2xs)/1.55 var(--mono);text-transform:uppercase;letter-spacing:.08em;
+  color:var(--warn);margin-bottom:5px}
+
+/* -------------------------------------------------------- compare table */
+.viewport.iscompare{display:block;padding:0;background:none;overflow:auto;
+  max-height:min(52vh,440px);scrollbar-width:thin}
+table.cmp{width:100%;border-collapse:collapse;font-size:var(--fs-sm)}
+table.cmp th,table.cmp td{padding:9px 12px;text-align:right;border-bottom:1px solid var(--line);
+  white-space:nowrap}
+table.cmp th{position:sticky;top:0;background:var(--panel);z-index:1;font:500 var(--fs-2xs)/1.55 var(--mono);
+  color:var(--muted);text-transform:uppercase;letter-spacing:.07em}
+/* The table scrolls sideways on a narrow screen, so the name column is given
+   room to stay on one or two lines rather than being squeezed into a column of
+   single words. */
+table.cmp th:first-child,table.cmp td:first-child{text-align:left;white-space:normal;
+  min-width:186px;position:sticky;left:0;background:var(--panel);z-index:2}
+table.cmp thead th:first-child{z-index:3}
+table.cmp tbody tr:hover td:first-child{background:var(--bg)}
+table.cmp tr.current td:first-child{background:color-mix(in srgb,var(--accent) 10%,var(--panel))}
+table.cmp td{font-family:var(--mono);font-size:var(--fs-sm)}
+table.cmp td:first-child{font-family:inherit;font-size:var(--fs-md)}
+table.cmp tbody tr{cursor:pointer;transition:background .12s}
+table.cmp tbody tr:hover{background:var(--bg)}
+table.cmp tr.current{background:color-mix(in srgb,var(--accent) 10%,transparent)}
+table.cmp tr.current td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
+/* --glue-ink, not --glue: the print-layer green is 3.25:1 as text and this is
+   text. The same fix was made for the Free badge; this instance was missed,
+   and a contrast sweep after the waste column started marking a best value
+   caught it. */
+table.cmp .best{color:var(--glue-ink);font-weight:700}
+table.cmp .bad{color:var(--muted);font-style:italic;font-family:inherit}
+.cmp-note{padding:11px 16px;border-top:1px solid var(--line);font-size:var(--fs-sm);color:var(--muted);
+  line-height:1.5}
+.cmp-name{display:flex;align-items:center;gap:9px}
+.cmp-name .thumb{flex:0 0 30px;width:30px;height:22px;color:var(--muted);opacity:.7}
+.cmp-name .thumb svg{width:100%;height:100%;display:block}
+.yield dd.spacer{height:6px;padding:0;grid-column:auto}
+
+/* ------------------------------------------------------ print-at-home */
+dialog.sheet.wide{max-width:min(860px,94vw);width:860px}
+dialog.sheet .dh .grow{flex:1}
+.tile-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(230px,1fr);gap:18px;
+  align-items:start}
+.tile-prev{--tile-knock:var(--bg);background:var(--bg);border:1px solid var(--line);border-radius:var(--r-sm);
+  padding:14px;min-width:0;display:flex;align-items:center;justify-content:center;min-height:190px}
+.tile-prev svg{max-height:44vh;display:block}
+.tile-side{min-width:0}
+.tile-side .field{margin-bottom:12px}
+.tile-side .primary{width:100%}
+dl.tile-facts{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;margin:0 0 14px;
+  font-size:var(--fs-md);align-items:baseline}
+/* dialog.sheet dt is a keycap chip for the shortcut list; this list is a plain
+   table of facts and must not inherit the border, box or mono face. */
+dl.tile-facts dt{color:var(--muted);font-size:var(--fs-sm);background:none;padding:0;
+  font-family:inherit;border:0;border-radius:0;text-align:left}
+dl.tile-facts dd{margin:0;color:var(--ink);font-family:var(--mono);font-size:var(--fs-sm);text-align:right}
+dl.tile-facts dd.wide{grid-column:1/-1;text-align:left;font-family:inherit;color:var(--muted);
+  font-size:var(--fs-sm);line-height:1.45}
+@media (max-width:720px){
+  .tile-grid{grid-template-columns:1fr}
+  .tile-prev{min-height:150px}
+  .tile-prev svg{max-height:30vh}
+}
+
+/* Uses the theme's own warning tokens, so it follows light/dark like .msg.warn. */
+dl.tile-facts dd.wide.warn-inline{color:var(--warn);background:var(--warn-bg);
+  border:1px solid currentColor;border-radius:var(--r-sm);padding:8px 10px;margin-top:6px;font-weight:400}
+
+/* ------------------------------------------------- structural rhythm
+ * These were inline style attributes on the markup - a margin-top here, a
+ * font-size there. Spacing that describes how the page is built belongs in
+ * the stylesheet, where it can be seen as a system rather than as twenty
+ * separate decisions. Stacked panels and prose sections now get their
+ * spacing from adjacency, so adding one never means remembering a margin.
+ * ---------------------------------------------------------------- */
+.panel + .panel,
+.panel + .stage,
+.stage + .panel{margin-top:16px}
+.col-stage > .prose{margin-top:36px}
+.prose h3 + p{margin-top:0}
+.prose > h3:not(:first-child){margin-top:28px}
+.field + .field{margin-top:12px}
+
+/* A note in the muted voice: small, grey, and set away from what it follows. */
+.note{margin:10px 0 0;font-size:var(--fs-sm);color:var(--muted);line-height:1.5}
+.note.tight{margin-top:6px}
+.note.wide-gap{margin-top:14px}
+/* A muted note that follows a block rather than introducing one. */
+.muted-note.lead{margin:0 0 10px}
+.muted-note.after{margin:10px 0 0}
+/* An aside inside a label: same voice, but on the label's own line. */
+.muted-note.inline{display:inline;margin:0}
+/* A quiet qualifier inside a button - "(true scale)". */
+.qualifier{opacity:.6}
+/* The unit toggle shares a line with the label it belongs to. */
+.row.spread{justify-content:space-between;margin-bottom:6px}
+.foot-brand{color:var(--ink)}
+.lmsg{margin-top:10px}
+dl.tile-facts dd.wide.sub{margin-top:-3px}
+/* The buy link, once the store is open, is the page's one primary action. */
+a.brand.buy{display:inline-flex;align-items:center;height:var(--h-control);padding:0 18px;
+  border-radius:var(--r-pill);background:var(--action);color:var(--action-ink);
+  font-size:var(--fs-lg);text-decoration:none}
+a.brand.buy:hover{background:var(--action-hover)}
+.stage-empty{color:var(--muted);font-size:var(--fs-md)}
+.fine{font-size:var(--fs-md)}
+.foot-note{margin-top:18px;font-size:var(--fs-sm);color:var(--muted);line-height:1.55}
+.brand-col{flex:2 1 260px}
+.row-label{margin:0}
+
+/* Form controls do not inherit type by default, so a button with no font rule
+   falls back to the UA's 13.33px and sits half a step off the scale. */
+button,input,select,textarea,optgroup{font-family:inherit}
+.themebtn,input[type=checkbox],input[type=range]{font-size:var(--fs-md)}
+
+/* --------------------------------------------------- what a style is for */
+.notes .brief{margin:0 0 11px;padding:0 0 11px;border-bottom:1px dashed var(--line);
+  color:var(--muted);line-height:1.55}
+.notes .brief b{color:var(--ink);font-weight:600}
+.notes .brief b::after{content:" \2014";color:var(--muted);font-weight:400}
+.brief-more{white-space:nowrap;font-weight:500;text-decoration:none}
+.brief-more:hover{text-decoration:underline}
+
+/* The graticule key. It is a legend entry like Cut and Crease, because the
+   grid carries the same kind of information: it says what you are looking at. */
+.legend .l-grid i{width:12px;height:12px;border:0;border-top:1px solid var(--grid-bold);
+  border-left:1px solid var(--grid-bold);background:
+    linear-gradient(var(--grid-fine),var(--grid-fine)) 0 6px/12px 1px no-repeat,
+    linear-gradient(var(--grid-fine),var(--grid-fine)) 6px 0/1px 12px no-repeat;
+  margin-right:6px;vertical-align:-2px;display:inline-block}
+
+/* --------------------------------------------------------------- pack-out
+ * A layer seen from above. Solid rectangles, not dielines: at this point the
+ * box is a thing on a pallet, and drawing its creases would describe the wrong
+ * object. The dashed rule is the footprint the boxes may not leave.
+ */
+.pack-bar{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;
+  padding:11px 16px;border-top:1px solid var(--line);background:var(--panel)}
+.pack-bar .field{margin:0;flex:1 1 150px;min-width:0}
+.pack-bar .field:first-child{flex:2 1 240px}
+.pack-bar label{margin-bottom:3px;font:500 var(--fs-2xs)/1.55 var(--mono);text-transform:uppercase;
+  letter-spacing:.08em}
+.viewport.ispack{background:var(--paper);padding:16px}
+.pack-wrap{width:100%;display:flex;gap:18px;align-items:stretch;justify-content:center;min-width:0}
+.pack-fig{margin:0;flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:8px}
+.pack-fig.narrow{flex:0 1 28%}
+.pack-svg{flex:1 1 auto;display:flex;align-items:center;justify-content:center;min-height:0}
+.pack-wrap svg{max-height:min(42vh,360px);width:auto;max-width:100%;display:block}
+.pack-fig figcaption{text-align:center;font:500 var(--fs-2xs)/1.55 var(--mono);color:var(--muted);
+  text-transform:uppercase;letter-spacing:.08em}
+
+/* The answer, set like an answer. */
+.pack-total{display:flex;align-items:baseline;gap:6px;font-size:var(--fs-sm);color:var(--muted)}
+.pack-total b{font:500 var(--fs-3xl)/1 var(--mono);color:var(--ink);letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums}
+.pack-facts{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;flex:1 1 300px}
+/* Said plainly, because a confident number invites more trust than the method
+   deserves. The count is geometry; a pallet spec is not only geometry. */
+.pack-caveat{flex:1 1 100%;font-size:var(--fs-2xs);color:var(--muted);line-height:1.5;
+  padding-top:9px;margin-top:2px;border-top:1px dashed var(--line)}
+#sheetNote:has(.pack-total){align-items:baseline;gap:18px;padding:12px 16px}
+@media (max-width:640px){
+  .pack-wrap{flex-direction:column;gap:12px}
+  .pack-fig.narrow{flex:0 0 auto}
+  .pack-wrap svg{max-height:26vh}
+  .pack-total b{font-size:var(--fs-2xl)}
+}
+/* Colours for SVG built in JavaScript - the pack layer and the tile plan.
+   --tile-fill and --tile-line were referenced by toTileSVG() and never
+   defined, so the print-at-home preview silently used its light-mode fallback
+   in dark mode. A test now asserts in both directions: no token defined and
+   unused, and none used and undefined. */
+:root{--pack-fill:rgba(13,110,140,.13); --pack-line:#0d6e8c; --pack-edge:#7f8781;
+  --tile-fill:rgba(13,110,140,.06); --tile-line:#0d6e8c}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){
+  --pack-fill:rgba(92,195,223,.16); --pack-line:#5cc3df; --pack-edge:#7f8c85;
+  --tile-fill:rgba(92,195,223,.09); --tile-line:#5cc3df}}
+:root[data-theme=dark]{--pack-fill:rgba(92,195,223,.16); --pack-line:#5cc3df; --pack-edge:#7f8c85;
+  --tile-fill:rgba(92,195,223,.09); --tile-line:#5cc3df}
+.sheet-note b{color:var(--ink);font-weight:600}
+@media (max-width:640px){
+  .pack-bar{padding:10px 12px;gap:9px}
+  .pack-bar .field,.pack-bar .field:first-child{flex:1 1 130px}
+}
+
+/* ----------------------------------------------------------- starter note
+ * Shown once, to say that the opening box is an example. It sits between the
+ * stage bar and the annotation bar so it reads as part of the drawing's
+ * frame rather than as a banner bolted to the page, and it uses the accent
+ * only as a hairline: it is an explanation, not an alert.
+ */
+.starter{display:flex;align-items:center;gap:12px;padding:10px 16px;
+  border-bottom:1px solid var(--line);
+  background:color-mix(in srgb,var(--accent) 6%,var(--panel));
+  box-shadow:inset 3px 0 0 var(--accent)}
+.starter-txt{flex:1 1 auto;min-width:0;font-size:var(--fs-sm);color:var(--muted);line-height:1.5}
+.starter-txt b{color:var(--ink);font-family:var(--mono);font-weight:500;
+  font-size:var(--fs-xs);white-space:nowrap}
+.starter .ghost.sm{height:var(--h-small);font-size:var(--fs-xs);flex:0 0 auto}
+.starter .iconbtn{flex:0 0 auto;font-size:var(--fs-lg);line-height:1}
+@media (max-width:640px){
+  .starter{flex-wrap:wrap;gap:8px}
+  .starter-txt{flex:1 1 100%}
+  .starter .ghost.sm{flex:1 1 auto}
+}
+
+/* Sortable headings in the comparison. A heading that ranks is a button, so it
+   is reachable by keyboard and announces itself; the active one is marked in
+   the accent rather than with an arrow glyph that would need a direction. */
+button.cmp-sort{background:none;border:0;padding:0;margin:0;font:inherit;color:inherit;
+  cursor:pointer;text-transform:inherit;letter-spacing:inherit;text-align:right;
+  white-space:nowrap;position:relative}
+button.cmp-sort:hover{color:var(--ink)}
+button.cmp-sort.on{color:var(--accent);font-weight:500}
+button.cmp-sort.on::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:2px;
+  background:var(--accent)}
+table.cmp th:first-child button.cmp-sort{text-align:left}
+
+/* A caliper the reader did not choose is set quieter than one they did, so the
+   substitution reads as information rather than as an unexplained difference. */
+table.cmp td.sub{color:var(--muted)}
+
+/* A row that CAN be made but should not be.
+ *
+ * The table already refuses styles whose geometry will not close, with the
+ * reason in place of the numbers. A style that merely raises a caution showed
+ * a clean row of figures and said nothing - so a 736mm tuck carton in 350
+ * micron card read as a perfectly good option that simply used more board.
+ * The caution now travels with the row it belongs to. */
+.cmp-txt{display:block;min-width:0}
+
+/* The caution gets its own row rather than a paragraph inside the name cell.
+ *
+ * Inside the cell it had 123px to wrap in while the table was 875px wide, so a
+ * one-sentence caution became six lines and took its row from 41px to 156px.
+ * Three of eight rows were quadruple height and the eye could no longer run
+ * down a column, which is the only thing the table is for. On its own row the
+ * caution has the full width, the figures stay on one line, and the pair still
+ * reads as one row: shared tint, no rule between them, shared hover. */
+/* The name column is sticky so it survives sideways scrolling, and the caution
+   cell is a first child too - left alone it would pin a paragraph of text over
+   the figures the reader scrolled right to see. It spans the whole table, so it
+   scrolls with it. Specificity here has to clear `table.cmp td`, which sets the
+   padding and nowrap for every other cell. */
+table.cmp tr.cmp-warn-row td{padding:0 12px 9px 51px;text-align:left;
+  font-family:inherit;white-space:normal;position:static;min-width:0}
+table.cmp tr.warned td{border-bottom:none}
+/* The cell is as wide as the table, so left alone the caution wrapped to the
+   table's width and ran off the right edge of a phone - prose you had to
+   scroll sideways to read. The cap keeps it inside the screen. It is
+   deliberately not sticky like the name column: that column is 186px and tells
+   you which row you are on, whereas pinning three lines of prose would cover
+   most of the width with the figures you scrolled across to read. 78ch caps
+   the measure on a wide screen - a 900px line of 11px text is unreadable for
+   the opposite reason. 93px is the 21px pane inset on each side plus the 51px
+   indent - the width the caution actually has to wrap in. */
+.cmp-warn{display:block;font-size:var(--fs-2xs);line-height:1.45;
+  color:var(--warn);font-weight:500;white-space:normal;
+  max-width:min(78ch,calc(100vw - 93px))}
+/* Hangs the marker in the indent so the caution text lines up with the style
+ * name above it, not 14px to its right. */
+.cmp-warn::before{content:"▲";font-size:.85em;display:inline-block;
+  width:14px;margin-left:-14px}
+table.cmp tr.warned td,
+table.cmp tr.cmp-warn-row td{background:color-mix(in srgb,var(--warn) 5%,transparent)}
+table.cmp tr.warned:hover td,
+table.cmp tr.warned:hover + .cmp-warn-row td,
+table.cmp tr.cmp-warn-row:hover td,
+table.cmp tr.warned:has(+ .cmp-warn-row:hover) td{background:var(--bg)}
+
+
+/* ---------------------------------------------------------------------------
+   The dieline inspector: a parts schedule that points at the drawing, and a
+   drawing that points back.
+   ------------------------------------------------------------------------ */
+
+/* Transparent until wanted. `fill:transparent` rather than `fill:none`, or the
+   polygon has no interior and only its edge would be hoverable. */
+.hitlayer{pointer-events:auto}
+.hitr{fill:transparent;stroke:none;transition:fill .12s ease}
+/* The hit layer stays live at every zoom. Switching it off when the drawing
+   became pannable killed inspection at exactly the magnification where you
+   want to look at a 3mm slot; a drag is told from a press in script instead. */
+.hitr.on{fill:var(--wash);stroke:var(--wash-line);stroke-width:1;
+  vector-effect:non-scaling-stroke;stroke-dasharray:3 2}
+.hitr.pinned{fill:var(--wash-pin);stroke-dasharray:none}
+
+.partchip{position:absolute;left:0;top:0;pointer-events:none;z-index:4;
+  display:flex;align-items:baseline;gap:7px;white-space:nowrap;
+  background:var(--ink);color:var(--panel);
+  padding:5px 10px;border-radius:var(--r-sm);
+  box-shadow:0 2px 10px rgba(15,23,18,.22);
+  font-size:var(--fs-xs);line-height:1.2;opacity:0;
+  transition:transform .12s cubic-bezier(.2,.7,.3,1),opacity .12s ease}
+.partchip b{font-weight:650;letter-spacing:.01em}
+.partchip .x{font:var(--fs-2xs)/1 var(--mono);opacity:.75}
+.partchip .k{font-size:var(--fs-2xs);text-transform:uppercase;letter-spacing:.06em;
+  opacity:.6}
+.partchip .d{font:var(--fs-xs)/1 var(--mono);opacity:.95;
+  padding-left:7px;border-left:1px solid rgba(255,255,255,.22)}
+
+.parts{border-top:1px solid var(--line);padding:12px 16px 14px}
+.parts-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.parts-head h3{margin:0;font:500 var(--fs-2xs)/1.25 var(--mono);color:var(--muted);
+  text-transform:uppercase;letter-spacing:.08em}
+.parts-hint{margin:0;font-size:var(--fs-xs);color:var(--muted)}
+.parts-list{list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px 26px}
+/* Name and count belong together on the left, the size on the right, and a
+   leader carries the eye between them - the way a schedule on a drawing has
+   always been set. The gap used to sit BETWEEN the name and its count, which
+   pulled apart the two things that mean least apart. */
+.parts-list button{width:100%;display:grid;
+  grid-template-columns:auto auto auto 1fr auto;align-items:center;gap:0 8px;
+  background:none;border:0;border-radius:var(--r-xs);
+  padding:5px 7px;margin:0;cursor:pointer;text-align:left;color:inherit;
+  font-size:var(--fs-md);min-height:var(--h-chip);
+  transition:background .12s ease}
+.parts-list button:hover,.parts-list button.on{background:var(--bg)}
+.parts-list button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.parts-list button.on{box-shadow:inset 2px 0 0 var(--wash-line)}
+/* The kind marker.
+ *
+ * It first repeated the drawing's layer colours - panel in crease blue, flap in
+ * a paler blue - which was wrong twice over: a panel is not a crease, and it
+ * spent the drawing's colour vocabulary on something that is not a layer. The
+ * body of the box and the parts that fold out of the way are told apart by
+ * FORM, filled against hollow, the way the wash tells selection by tone. Glue
+ * keeps green, because glue really is green on the drawing. */
+.pk{width:8px;height:8px;border-radius:var(--r-pill);flex:0 0 auto;
+  border:1.5px solid var(--muted);background:var(--muted)}
+.pk-flap{background:transparent}
+.pk-glue{border-color:var(--glue-ink);background:var(--glue-ink)}
+.parts-list button.on .pk{border-color:var(--ink);background:var(--ink)}
+.parts-list button.on .pk-flap{background:transparent}
+.parts-list button.on .pk-glue{border-color:var(--glue-ink);background:var(--glue-ink)}
+.pl{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pc{font:var(--fs-2xs)/1 var(--mono);color:var(--muted);min-width:1.4em}
+.pdots{height:0;align-self:center;
+  border-bottom:1px dotted color-mix(in srgb,var(--muted) 38%,transparent);
+  margin:0 2px;transition:border-color .12s ease}
+.parts-list button.on .pdots{border-bottom-color:var(--wash-line)}
+.pd{font:var(--fs-xs)/1 var(--mono);color:var(--muted);white-space:nowrap}
+.parts-list button.on .pd{color:var(--ink)}
+
+@media (prefers-reduced-motion:reduce){
+  .hitr,.partchip,.parts-list button{transition:none}
+}
+
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .partchip{
+  background:#e8f0ea;color:#0f1712;box-shadow:0 2px 10px rgba(0,0,0,.5)}
+  :root:not([data-theme=light]) .partchip .d{border-left-color:rgba(0,0,0,.18)}}
+:root[data-theme=dark] .partchip{background:#e8f0ea;color:#0f1712;
+  box-shadow:0 2px 10px rgba(0,0,0,.5)}
+:root[data-theme=dark] .partchip .d{border-left-color:rgba(0,0,0,.18)}
+
+/* ------------------------------------------------------------ Labs family
+ * The credit line every Labs product carries, the header on a narrow phone,
+ * and the two legal pages' spacing, which used to be style attributes.
+ * ---------------------------------------------------------------------- */
+.labs-credit{margin:16px 0 0;font-size:var(--fs-sm);color:var(--muted);line-height:1.55}
+footer.site .labs-credit a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;
+  text-decoration-color:color-mix(in srgb,var(--ink) 30%,transparent)}
+footer.site .labs-credit a:hover{text-decoration-color:currentColor}
+footer.site a:hover{color:var(--ink)}
+.prose.legal{padding:28px 0 10px}
+.prose .updated{font-size:var(--fs-md)}
+@media (max-width:480px){
+  header.site .wrap{gap:10px}
+  .hdr-tools{gap:4px}
+  header.site nav a{padding:0 7px}
+}

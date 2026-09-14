@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="408.887mm" height="213.544mm"
+     viewBox="0 0 408.887 213.544" data-generator="Cartonry">
+  <title>Hexagonal box - 100 x 0 x 120 mm internal</title>
+  <g transform="translate(10 203.544) scale(1 -1)">
+  <g id="Cut" data-layer="cut" stroke="#E6007E" stroke-width="0.25" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M39.145 71.444 L29.145 75.444 L29.145 187.944 L39.145 191.944 L387.287 191.944 L387.287 71.444 L387.287 71.444 L376.843 21.792 L339.708 21.792 L329.264 71.444 L329.264 71.444 L318.819 21.792 L281.684 21.792 L271.24 71.444 L271.24 71.444 L260.796 21.792 L223.66 21.792 L213.216 71.444 L213.216 71.444 L202.772 21.792 L165.637 21.792 L155.192 71.444 L155.192 71.444 L144.748 21.792 L107.613 21.792 L97.169 71.444 L97.169 71.444 L86.724 21.792 L49.589 21.792 L39.145 71.444 Z"/>
+  </g>
+  <g id="Crease---fold" data-layer="crease" stroke="#0090D4" stroke-width="0.25" stroke-dasharray="3 2" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M39.145 71.444 L39.145 191.944"/>
+    <path d="M97.169 71.444 L97.169 191.944"/>
+    <path d="M155.192 71.444 L155.192 191.944"/>
+    <path d="M213.216 71.444 L213.216 191.944"/>
+    <path d="M271.24 71.444 L271.24 191.944"/>
+    <path d="M329.264 71.444 L329.264 191.944"/>
+    <path d="M387.287 71.444 L387.287 191.944"/>
+    <path d="M39.145 71.444 L387.287 71.444"/>
+  </g>
+  <g id="Glue-area" data-layer="glue" stroke="#00A45A" stroke-width="0.25" stroke-dasharray="2 1.5" fill="rgba(0,164,90,.08)" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M29.145 75.444 L39.145 71.444 L39.145 191.944 L29.145 187.944 Z"/>
+  </g>
+  <g id="Dimensions" data-layer="dim" stroke="#8A94A0" stroke-width="0.25" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M29.145 19.792 L29.145 0"/>
+    <path d="M387.287 19.792 L387.287 0"/>
+    <path d="M29.145 1.6 L387.287 1.6"/>
+    <path d="M27.545 0 L30.745 3.2"/>
+    <path d="M385.687 0 L388.887 3.2"/>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="11.1919375" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(208.216 6.636) scale(1 -1) rotate(0)">358.1 mm</text>
+    <path d="M27.145 21.792 L7.353 21.792"/>
+    <path d="M27.145 191.944 L7.353 191.944"/>
+    <path d="M8.953 21.792 L8.953 191.944"/>
+    <path d="M7.353 20.192 L10.553 23.392"/>
+    <path d="M7.353 190.344 L10.553 193.544"/>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="11.1919375" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(3.917 106.868) scale(1 -1) rotate(-90)">170.2 mm</text>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="9.513146875" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(68.157 127.777) scale(1 -1) rotate(0)">Face 1</text>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="9.513146875" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(126.181 127.777) scale(1 -1) rotate(0)">Face 2</text>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="9.513146875" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(184.204 127.777) scale(1 -1) rotate(0)">Face 3</text>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="9.513146875" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(242.228 127.777) scale(1 -1) rotate(0)">Face 4</text>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="9.513146875" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(300.252 127.777) scale(1 -1) rotate(0)">Face 5</text>
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="9.513146875" text-anchor="middle" fill="#8A94A0" stroke="none" transform="translate(358.275 127.777) scale(1 -1) rotate(0)">Face 6</text>
+  </g>
+  </g>
+</svg>
