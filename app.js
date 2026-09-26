@@ -349,7 +349,7 @@ function renderClearanceOptions() {
   const idx = Math.max(0, sel.selectedIndex);
   sel.innerHTML = (CLEARANCE_PRESETS[state.unit] || CLEARANCE_PRESETS.mm)
     .map(([v, name, shown, why]) =>
-      `<option value="${v}">${name} — ${shown} each side${why ? ` (${why})` : ''}</option>`)
+      `<option value="${v}">${name} · ${shown} each side${why ? ` (${why})` : ''}</option>`)
     .join('') + '<option value="custom">Custom…</option>';
   sel.selectedIndex = wasCustom ? sel.options.length - 1 : Math.min(idx, sel.options.length - 1);
 }
@@ -400,7 +400,7 @@ const joinDims = (vals, u) => (u === 'in'
 function renderPaperOptions() {
   const u = state.unit;
   $('paperSel').innerHTML = PAPERS.map((p) =>
-    `<option value="${p.id}">${p.name} — ${dim2(p.w, p.h, u)}</option>`).join('');
+    `<option value="${p.id}">${p.name} · ${dim2(p.w, p.h, u)}</option>`).join('');
   $('paperSel').value = state.paper;
 }
 function renderSheetOptions() {
@@ -543,9 +543,9 @@ function update() {
   // a black box - the joint differs by an order of magnitude between formats.
   if ($('optGlue').value === '') {
     $('optGlue').placeholder = dl.panels.glueTab
-      ? `auto — ${dim(dl.panels.glueTab, u)}` : 'n/a';
+      ? `auto · ${dim(dl.panels.glueTab, u)}` : 'n/a';
   }
-  if ($('optSlot').value === '') $('optSlot').placeholder = `auto — ${dl.params.t}`;
+  if ($('optSlot').value === '') $('optSlot').placeholder = `auto · ${dl.params.t}`;
   const steps = (GUIDES[state.styleId] || {}).assembly || [];
   $('assembly').hidden = !steps.length;
   $('assemblySteps').innerHTML = steps.map((t) => `<li>${t}</li>`).join('');
@@ -561,7 +561,7 @@ function update() {
     : 'Download PDF <span class="qualifier">(true scale)</span>';
   $('dlDxf').textContent = sheetMode ? 'Sheet DXF' : 'Download DXF';
   $('exportNote').textContent = !unlocked
-    ? `${style.name} needs a licence — preview is free.`
+    ? `${style.name} needs a licence: preview is free.`
     : sheetMode ? 'Exporting the whole nested sheet.' : 'Files are generated on your device.';
 }
 
@@ -596,7 +596,7 @@ function renderFitPreview() {
   }
   btn.disabled = false; btn.style.opacity = 1;
   el.innerHTML = `Internal box size <strong class="foot-brand">`
-    + `${joinDims(r.box, state.unit)}</strong> — your product plus `
+    + `${joinDims(r.box, state.unit)}</strong> · your product plus `
     + `${dim1(r.clearance, state.unit)} on each side.`;
 }
 
@@ -655,7 +655,7 @@ function renderYield() {
   const rows = [];
   rows.push(['Blanks per sheet', y.perSheet
     ? `${y.perSheet}`
-    : '<span class="warn-inline">0 — too big</span>']);
+    : '<span class="warn-inline">0 · too big</span>']);
   if (y.perSheet) rows.push(['Board wasted', `${y.wastePct}%`]);
   if (y.rotatedCount) rows.push(['Turned 90°', `${y.rotatedCount} of ${y.perSheet}`]);
   rows.push(['Board per box', area1(state.dl.blankAreaM2, u)]);

@@ -1,0 +1,26 @@
+# Cartonry
+
+> A packaging dieline generator that runs entirely in the browser. Type the internal
+> size of a product and it draws the flat cutting template for a box that fits, with
+> cut, crease and glue lines, panel sizes, and exports to SVG, PDF and DXF.
+
+One page of static HTML and ES modules. Every measurement is computed locally; the
+geometry never leaves the browser, and the tool keeps working offline once loaded.
+
+## Box styles
+
+- Regular Slotted Container (RSC, code 0201), free.
+- Half Slotted Container, Full Overlap Slotted Container.
+- Tuck-top mailer box, four-corner tray.
+
+## Pages
+
+- [The generator](https://cartonry.vercel.app/): dimensions, board, box style, and the drawing.
+- [Privacy](https://cartonry.vercel.app/privacy.html)
+- [Terms](https://cartonry.vercel.app/terms.html)
+
+## Elsewhere
+
+- [Labs](https://labs.johnjayasankar.com/): the other independent products.
+- [Case study](https://johnjayasankar.com/work/cartonry)
+- Contact: johnjayasankar@gmail.com

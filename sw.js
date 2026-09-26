@@ -20,6 +20,7 @@ const VERSION = `cartonry-v${V}`;
 const SHELL = [
   './', './index.html', `./styles.css?v=${V}`, `./app.js?v=${V}`,
   './favicon.svg', './manifest.webmanifest', './privacy.html', './terms.html',
+  `./labs/labs-glass.css?v=${V}`, `./labs/labs-init.js?v=${V}`, './labs/labs-ui.js',
   './fonts/inter-var.woff2', './fonts/ibm-plex-mono-400.woff2', './fonts/ibm-plex-mono-500.woff2',
   './src/geom.js', './src/model.js', './src/registry.js', './src/config.js',
   './src/license.js', './src/annotate.js', './src/estimate.js', './src/fold.js',

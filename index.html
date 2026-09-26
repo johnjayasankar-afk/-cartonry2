@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-labs-glass="auto">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Cartonry — packaging dieline generator (RSC, mailer, tuck carton, tray)</title>
+<title>Cartonry · packaging dieline generator (RSC, mailer, tuck carton, tray)</title>
 <meta name="description" content="Generate production-ready packaging dielines at any size. Regular slotted cartons, e-commerce mailers, tuck-end cartons, trays, sleeves and pillow boxes. Export SVG, true-scale PDF and DXF. Runs entirely in your browser.">
 <link rel="stylesheet" href="styles.css?v=76">
+<link rel="stylesheet" href="labs/labs-glass.css?v=76">
 <link rel="preload" href="fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/ibm-plex-mono-500.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -14,7 +15,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cartonry.vercel.app/">
-<meta property="og:title" content="Cartonry — packaging dieline generator">
+<meta property="og:title" content="Cartonry · packaging dieline generator">
 <meta property="og:description" content="Production-ready packaging dielines at any size: shipping cases, e-commerce mailers, tuck cartons, trays, sleeves and hexagonal boxes. Export SVG, true-scale PDF and DXF. Everything runs in your browser.">
 <meta property="og:image" content="https://cartonry.vercel.app/og.png">
 <meta property="og:image:width" content="1200">
@@ -59,7 +60,7 @@
        the brand is in the header and the tool fills the screen - but a document
        with no H1 gives a screen-reader user nothing to land on, and every
        reference page under box/ has a visible one. -->
-  <h1 class="sr">Cartonry — packaging dieline generator</h1>
+  <h1 class="sr">Cartonry · packaging dieline generator</h1>
   <div class="app-layout">
     <!-- ------------------------------------------------ controls -->
     <div>
@@ -115,9 +116,9 @@
               <div class="field">
                 <label for="clearSel">Room around the product</label>
                 <select id="clearSel">
-                  <option value="1">Snug — 1 mm each side (rigid product, no padding)</option>
-                  <option value="3" selected>Standard — 3 mm each side</option>
-                  <option value="6">Generous — 6 mm each side (room for tissue or a card)</option>
+                  <option value="1">Snug · 1 mm each side (rigid product, no padding)</option>
+                  <option value="3" selected>Standard · 3 mm each side</option>
+                  <option value="6">Generous · 6 mm each side (room for tissue or a card)</option>
                   <option value="custom">Custom…</option>
                 </select>
               </div>
@@ -175,7 +176,7 @@
           </div>
           <label class="check">
             <input type="checkbox" id="allowRot">
-            <span>Board has no grain direction — blanks may be turned 90°
+            <span>Board has no grain direction: blanks may be turned 90°
               <em>Corrugated flutes and carton grain run one way down the sheet, and turning a
               blank changes how the finished box behaves. Leave this off unless your converter
               says the board is non-directional.</em></span>
@@ -230,7 +231,7 @@
           <!-- No "on the left": the dimensions panel is beside the drawing on a
                desktop and below it on a phone, and one string has to be true of
                both. The button carries the direction instead. -->
-          <span class="starter-txt">You are looking at an example — a shipping case at
+          <span class="starter-txt">You are looking at an example: a shipping case at
             <b id="starterSize">200 × 150 × 100 mm</b>. Change the dimensions to make it
             yours, or start from what you are packing.</span>
           <button type="button" class="ghost sm" id="starterFit">Size it from my product</button>
@@ -310,7 +311,7 @@
       <!-- ------------------------------------------------ content -->
       <section class="prose" id="catalogue">
         <h2>What this makes</h2>
-        <p>A dieline is the flat cutting template a box is made from — the outline the
+        <p>A dieline is the flat cutting template a box is made from: the outline the
         knife follows and the lines the board is creased along. Cartonry computes one for
         the internal size you type, with the board thickness already allowed for, and hands
         you a file you can put artwork onto or send to a die maker.</p>
@@ -357,7 +358,7 @@
       <section class="prose" id="help">
         <h2>Help</h2>
         <h3>Which dimensions do I enter?</h3>
-        <p>Always the <strong>internal</strong> size — the space your product needs. Cartonry
+        <p>Always the <strong>internal</strong> size: the space your product needs. Cartonry
         adds the board allowances on top. If you enter the outside size, the box will be
         smaller inside than you expect.</p>
         <h3>What are the coloured lines?</h3>
@@ -365,12 +366,12 @@
         glue area. They come through as separate named layers in SVG and DXF so your printer
         or die maker can separate them.</p>
         <h3>Which file should I send?</h3>
-        <p><strong>PDF</strong> for a printer or for placing artwork — it is written at true
+        <p><strong>PDF</strong> for a printer or for placing artwork: it is written at true
         scale, so one millimetre in the file is one millimetre on paper.
         <strong>DXF</strong> for a die maker or a cutting table (R12, millimetres, layered).
         <strong>SVG</strong> to open in Illustrator, Affinity, Inkscape or CorelDRAW.
-        <strong>Spec sheet</strong> is a one-page A4 summary — the drawing plus every number a
-        converter will ask for — meant to be attached to the email rather than measured. It
+        <strong>Spec sheet</strong> is a one-page A4 summary: the drawing plus every number a
+        converter will ask for: meant to be attached to the email rather than measured. It
         carries no pricing: what your board costs is your business, not your supplier's, so it
         stays on screen.</p>
 
@@ -382,11 +383,11 @@
         and an approximation would look convincing and be wrong.</p>
 
         <h3>Can I work in inches?</h3>
-        <p>Yes — press the <strong>in</strong> toggle, or <strong>U</strong>. Everything you
+        <p>Yes · press the <strong>in</strong> toggle, or <strong>U</strong>. Everything you
         measure follows: the box, the blank, the panel sizes, the sheet, the gutter and trim, the
         written notes, the print dialog and the spec sheet. Board area switches with it, square
         metres becoming square feet, and if you have entered a board price it is converted so the
-        cost per box stays the same money. You can type fractions the way you would say them —
+        cost per box stays the same money. You can type fractions the way you would say them:
         <code>12 1/2</code> and <code>12-1/2</code> both work.</p>
         <p><strong>Board caliper and slot width stay in millimetres</strong> in both modes. That
         is deliberate, not an oversight: board is specified in millimetres or microns by every
@@ -395,7 +396,7 @@
 
         <h3>My box is bigger than my printer</h3>
         <p>Almost every box is. A 200 × 150 × 100 mm shipping case unfolds to a blank
-        747 mm across — larger than A2. Press <strong>Print at home</strong> and the dieline
+        747 mm across: larger than A2. Press <strong>Print at home</strong> and the dieline
         is split across sheets of your own paper at exactly 1:1, with a trim line on each
         sheet and a sheet map to lay them out by. Cut along the long grey dashes, butt the
         cut edges together and tape the back. Every sheet carries a printed 100 mm bar:
@@ -403,7 +404,7 @@
         the whole thing by a few per cent and nothing will fit.</p>
 
         <h3>Can I send someone this exact box?</h3>
-        <p>Yes — press <strong>Copy link</strong>. The whole specification lives in the address,
+        <p>Yes · press <strong>Copy link</strong>. The whole specification lives in the address,
         so the link reopens the same style at the same dimensions on the same board. Press
         <strong>?</strong> for the other keyboard shortcuts.</p>
         <h3>Does my design leave my computer?</h3>
@@ -462,7 +463,7 @@
         </div>
         <dl class="tile-facts" id="tileFacts"></dl>
         <button class="primary" id="tileGo">Download the tiled PDF</button>
-        <p class="muted-note">Print at <strong>100%</strong> —
+        <p class="muted-note">Print at <strong>100%</strong>:
           turn off “fit to page”. Every sheet carries a 100&nbsp;mm bar so you can
           check the printer did as it was told before you cut anything.</p>
       </div>
@@ -477,7 +478,7 @@
       <dt>F</dt><dd>Switch between the dieline and the 3D fold</dd>
       <dt>H</dt><dd>Show the sheet layout</dd>
       <dt>C</dt><dd>Compare every style at this size</dd>
-      <dt>K</dt><dd>Pack — how many fit in a case or on a pallet</dd>
+      <dt>K</dt><dd>Pack · how many fit in a case or on a pallet</dd>
       <dt>R</dt><dd>Replay the fold animation</dd>
       <dt>D</dt><dd>Dimensions on or off</dd>
       <dt>N</dt><dd>Panel names on or off</dd>
@@ -487,7 +488,7 @@
       <dt>+ &nbsp;&minus;</dt><dd>Zoom the dieline in and out</dd>
       <dt>0</dt><dd>Fit the dieline to the view</dd>
       <dt>[ &nbsp;]</dt><dd>Previous or next box style</dd>
-      <dt>T</dt><dd>Print at home — tile the dieline onto your paper</dd>
+      <dt>T</dt><dd>Print at home · tile the dieline onto your paper</dd>
       <dt>S</dt><dd>Copy a link to this exact box</dd>
       <dt>?</dt><dd>This list</dd>
     </dl>
@@ -497,5 +498,6 @@
 </dialog>
 
 <script type="module" src="app.js?v=76"></script>
+<script type="module" src="labs/labs-init.js?v=76"></script>
 </body>
 </html>
